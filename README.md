@@ -2,11 +2,7 @@
 
 ## MADE WITH ♥ BY JAY
 
-## TABLE OF CONTENTS 1. 2. 3.
-
-DATA TYPES
-
-7 Data Types
+### 7 Data Types
 
 1. Boolean
 2. Null
@@ -16,54 +12,45 @@ DATA TYPES
 6. Symbol (New ES6)
 7. Object
 
-======================================================================
-\*/
+### STRING
 
-# STRING
+### NUMBER
 
-\*/
+#### Number.toFixed(n)
 
-# NUMBER
-
-\*/
-
-// Number.toFixed(n)
-// Returns a string representation of the number rounded to n decimal places
-
-// Number.toPrecision(n)
-// Returns a string representation of the number rounded to n digits
+Returns a string representation of the number rounded to n decimal places
 
 (12345.6789).toFixed(3); // "12345.679"
+
+#### Number.toPrecision(n)
+
+Returns a string representation of the number rounded to n digits
+
 (12345.6789).toPrecision(6); // "12345.7"
 
-# /\* BOOLEAN
+## BOOLEAN
 
-\*/
+## NULL, UNDEFINED
 
-# /\* NULL, UNDEFINED
+## ARRAY
 
-\*/
+### FOR IN
 
-# /\* ARRAY
+### FOR OF
 
-\*/
+## OBJECT
 
-// FOR IN
-//
-// FOR OF
+### Algorithms?
 
-# /\* OBJECT
+### TASK: REMOVE DUPLICATE VALUES IN AN ARRAY
 
-\*/
-
-// TASK: REMOVE DUPLICATE VALUES IN AN ARRAY
-//
-// IN: [1,1,2,2,2,3,3,4,4,4,5,5,6,6,7,7,8,9,0]
-// OUT: [1,2,3,4,5,6,7,8,9,0]
+IN: [1,1,2,2,2,3,3,4,4,4,5,5,6,6,7,7,8,9,0]
+OUT: [1,2,3,4,5,6,7,8,9,0]
 
 let arr = [1, 1, 2, 2, 2, 3, 3, 4, 4, 4, 5, 5, 6, 6, 7, 7, 8, 9, 0];
 
-// USING FOR LOOP
+### USING FOR LOOP
+
 const removeDuplicatesFor = input => {
 const res = [];
 for (let i = 0; i < input.length; i++) {
@@ -74,21 +61,23 @@ return res;
 };
 // console.log(removeDuplicatesFor(arr));
 
-// USING SET
-// The Set object lets you store unique values of any type, whether primitive values or object references.
-const removeDuplicatesSet = input => [...new Set(input)];
-// console.log(removeDuplicatesSet(arr));
+### USING SET
 
-//
-// TASK: RETURN UNIQUE VALUES IN AN ARRAY
-//
-// IN: [1,1,2,2,2,3,3,4,4,4,5,5,6,7,8,9,0]
-// OUT: [6,7,8,9,0]
+"The Set object lets you store unique values of any type, whether primitive values or object references."
+
+const removeDuplicatesSet = input => [...new Set(input)];
+console.log(removeDuplicatesSet(arr));
+
+### TASK: RETURN UNIQUE VALUES IN AN ARRAY
+
+IN: [1,1,2,2,2,3,3,4,4,4,5,5,6,7,8,9,0]
+OUT: [6,7,8,9,0]
 
 arr = [1, 1, 2, 2, 2, 3, 3, 4, 4, 4, 5, 5, 6, 7, 8, 9, 0];
 
-// USING ARRAY.filter
+### USING ARRAY.filter
+
 const findUnique = input => {
 return input.filter(i => input.indexOf(i) == input.lastIndexOf(i));
 };
-// console.log(findUnique(arr));
+console.log(findUnique(arr));
