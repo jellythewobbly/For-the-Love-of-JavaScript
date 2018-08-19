@@ -48,9 +48,6 @@ Returns a string representation of the number rounded to n digits
 
 ### TASK: REMOVE DUPLICATE VALUES IN AN ARRAY
 
-IN: [1,1,2,2,2,3,3,4,4,4,5,5,6,6,7,7,8,9,0]
-OUT: [1,2,3,4,5,6,7,8,9,0]
-
 ```js
 let arr = [1, 1, 2, 2, 2, 3, 3, 4, 4, 4, 5, 5, 6, 6, 7, 7, 8, 9, 0];
 ```
@@ -66,7 +63,7 @@ const removeDuplicatesFor = input => {
 	}
 	return res;
 };
-// console.log(removeDuplicatesFor(arr));
+console.log(removeDuplicatesFor(arr)); // [1,2,3,4,5,6,7,8,9,0]
 ```
 
 ### USING SET
@@ -78,10 +75,9 @@ console.log(removeDuplicatesSet(arr));
 
 ### TASK: RETURN UNIQUE VALUES IN AN ARRAY
 
-IN: [1,1,2,2,2,3,3,4,4,4,5,5,6,7,8,9,0]
-OUT: [6,7,8,9,0]
-
+```js
 arr = [1, 1, 2, 2, 2, 3, 3, 4, 4, 4, 5, 5, 6, 7, 8, 9, 0];
+```
 
 ### USING ARRAY.filter
 
@@ -89,5 +85,5 @@ arr = [1, 1, 2, 2, 2, 3, 3, 4, 4, 4, 5, 5, 6, 7, 8, 9, 0];
 const findUnique = input => {
 	return input.filter(i => input.indexOf(i) == input.lastIndexOf(i));
 };
-console.log(findUnique(arr));
+console.log(findUnique(arr)); // [6,7,8,9,0]
 ```
