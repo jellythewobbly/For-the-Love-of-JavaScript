@@ -51,19 +51,23 @@ Returns a string representation of the number rounded to n digits
 IN: [1,1,2,2,2,3,3,4,4,4,5,5,6,6,7,7,8,9,0]
 OUT: [1,2,3,4,5,6,7,8,9,0]
 
+```js
 let arr = [1, 1, 2, 2, 2, 3, 3, 4, 4, 4, 5, 5, 6, 6, 7, 7, 8, 9, 0];
+```
 
 ### USING FOR LOOP
 
+```js
 const removeDuplicatesFor = input => {
-const res = [];
-for (let i = 0; i < input.length; i++) {
-// Single line if statement for only true value
-if (res.indexOf(input[i]) == -1) res.push(arr[i]);
-}
-return res;
+	const res = [];
+	for (let i = 0; i < input.length; i++) {
+		// Single line if statement for only true value
+		if (res.indexOf(input[i]) == -1) res.push(arr[i]);
+	}
+	return res;
 };
 // console.log(removeDuplicatesFor(arr));
+```
 
 ### USING SET
 
@@ -81,7 +85,9 @@ arr = [1, 1, 2, 2, 2, 3, 3, 4, 4, 4, 5, 5, 6, 7, 8, 9, 0];
 
 ### USING ARRAY.filter
 
+```js
 const findUnique = input => {
-return input.filter(i => input.indexOf(i) == input.lastIndexOf(i));
+	return input.filter(i => input.indexOf(i) == input.lastIndexOf(i));
 };
 console.log(findUnique(arr));
+```
