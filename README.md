@@ -20,13 +20,17 @@
 
 Returns a string representation of the number rounded to n decimal places
 
+```js
 (12345.6789).toFixed(3); // "12345.679"
+```
 
 #### Number.toPrecision(n)
 
 Returns a string representation of the number rounded to n digits
 
+```js
 (12345.6789).toPrecision(6); // "12345.7"
+```
 
 ## BOOLEAN
 
