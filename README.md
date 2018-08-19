@@ -70,8 +70,10 @@ console.log(removeDuplicatesFor(arr)); // [1,2,3,4,5,6,7,8,9,0]
 
 "The Set object lets you store unique values of any type, whether primitive values or object references."
 
+```js
 const removeDuplicatesSet = input => [...new Set(input)];
-console.log(removeDuplicatesSet(arr));
+console.log(removeDuplicatesSet(arr)); // [1,2,3,4,5,6,7,8,9,0]
+```
 
 ### TASK: RETURN UNIQUE VALUES IN AN ARRAY
 
