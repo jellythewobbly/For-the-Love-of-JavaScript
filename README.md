@@ -14,10 +14,42 @@
 
 ### STRING
 
-### NUMBER
+#### String methods
 
 ```js
-a = 12;
+// Template literals ``
+let name = 'David';
+let school = 'General Assembly';
+console.log(`Hello my name is ${name} and I am a student at ${school}.`); // "Hello my name is David and I am a student at General Assembly."
+
+// .toString()
+let a = 123;
+console.log(a.toString()); // '123'
+console.log(a); // 123
+
+// .length
+let alphabets = 'abcdefghijklmnopqrstuvwxyz';
+console.log(alphabets.length); // 26
+// indexing a string
+console.log(alphabets[0]); // 'a'
+console.log(alphabets[25]); // 'z'
+
+// String.fromCharCode()
+console.log(String.fromCharCode(97)); //'a'
+console.log(String.fromCharCode(65, 66, 67)); // 'ABC'
+
+// .charCodeAt()
+console.log('a'.charCodeAt()); // 97
+console.log('HELLO'.charCodeAt()); // 72 (if the argument is not a number, it defaults to 0)
+console.log('HELLO'.charCodeAt(1)); // 69 (Char code of index 1 - 'E')
+```
+
+### NUMBER
+
+#### Shorthand operators
+
+```js
+let a = 12;
 
 a += 3; // 15
 // a = a + 3
@@ -32,7 +64,7 @@ a /= 3; // 4
 // a = a / 3
 ```
 
-### Comparing i++ vs ++i
+#### Comparing i++ vs ++i
 
 ```js
 let i = 1;
