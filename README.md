@@ -16,6 +16,36 @@
 
 ### NUMBER
 
+```js
+a = 12;
+
+a += 3; // 15
+// a = a + 3
+
+a -= 3; // 9
+// a = a - 3
+
+a *= 3; // 36
+// a = a * 3
+
+a /= 3; // 4
+// a = a / 3
+```
+
+### Comparing i++ vs ++i
+
+```js
+let i = 1;
+console.log(i++); // 1
+console.log(i); // 2
+```
+
+```js
+let i = 1;
+console.log(++i); // 2
+console.log(i); // 2
+```
+
 #### Number.toFixed(n)
 
 Returns a string representation of the number rounded to n decimal places
@@ -38,11 +68,11 @@ Returns a string representation of the number rounded to n digits
 
 ## ARRAY
 
-### FOR IN
-
 ### FOR OF
 
 ## OBJECT
+
+### FOR IN
 
 ### Algorithms?
 
