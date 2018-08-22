@@ -25,23 +25,67 @@ console.log(`Hello my name is ${name} and I am a student at ${school}.`); // "He
 // .toString()
 let a = 123;
 console.log(a.toString()); // '123'
-console.log(a); // 123
 
 // .length
 let alphabets = 'abcdefghijklmnopqrstuvwxyz';
 console.log(alphabets.length); // 26
 // indexing a string
-console.log(alphabets[0]); // 'a'
-console.log(alphabets[25]); // 'z'
+console.log(alphabets[0]); // a
+console.log(alphabets[25]); // z
 
-// String.fromCharCode()
-console.log(String.fromCharCode(97)); //'a'
-console.log(String.fromCharCode(65, 66, 67)); // 'ABC'
+// String.fromCharCode(input)
+console.log(String.fromCharCode(97)); // a
+console.log(String.fromCharCode(65, 66, 67)); // ABC
 
-// .charCodeAt()
+// .charCodeAt(index)
 console.log('a'.charCodeAt()); // 97
-console.log('HELLO'.charCodeAt()); // 72 (if the argument is not a number, it defaults to 0)
+console.log('HELLO'.charCodeAt()); // 72 (if index is not a number, it defaults to 0)
 console.log('HELLO'.charCodeAt(1)); // 69 (Char code of index 1 - 'E')
+
+// .repeat(count)
+let str = 'foobar';
+console.log(str.repeat(3)); // foobarfoobarfoobar
+
+// .indexOf(input, fromIndex)
+let sentence = 'hello my friend';
+console.log(sentence.indexOf('my')); // 6
+console.log(sentence.indexOf('h')); // 0
+console.log(sentence.indexOf('hello')); // 0
+let first = sentence.indexOf('e');
+console.log(first); // 1
+console.log(sentence.indexOf('e', first + 1)); // 12 (use this to find the next index of)
+console.log(sentence.indexOf('waddup')); // -1
+
+// .lastIndexOf(input, fromIndex)
+let sentence = 'hello David, my friend';
+console.log(sentence.lastIndexOf('D')); // 6
+console.log(sentence.indexOf('d')); // 10
+console.log(sentence.lastIndexOf('d')); // 21
+console.log(sentence.lastIndexOf('e')); // 19
+console.log(sentence.lastIndexOf('l')); // 3
+console.log(sentence.lastIndexOf('l', 2)); // 2 (only searching from index 0 to index 2 of the string - 'hel')
+console.log(sentence.lastIndexOf('l', 1)); // -1 (only searching from index 0 to index 1 of the string - 'he')
+
+// .slice(start, end) similar but not the same as .substring()
+let alphabets = 'abcdefghijklmnopqrstuvwxyz';
+console.log(alphabets.slice()); // abcdefghijklmnopqrstuvwxyz
+console.log(alphabets.slice(3)); // defghijklmnopqrstuvwxyz
+console.log(alphabets.slice(3, 7)); // defg (index 3 up to but not including 7)
+console.log(alphabets.slice(-3)); // xyz (counting from the end of the string)
+console.log(alphabets.slice(-10, -4)); // qrstuv
+
+// .split(separator, limit)
+let str = 'hello world';
+console.log(str.split()); // ['hello world']
+console.log(str.split('')); // ['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']
+console.log(str.split(' ')); // ['hello', 'world']
+console.log(str.split('e')); // ['h', 'llo world']
+console.log(str.split('l')); // ['he', '', 'o wor', 'd']
+console.log(str.split('', 4)); // ['h', 'e', 'l', 'l'] (returns the first 4 splits)
+
+// .toLowerCase() .toUpperCase()
+console.log('WADDUP BRO'.toLowerCase()); // waddup bro
+console.log('hello world'.toUpperCase()); // HELLO WORLD
 ```
 
 ### NUMBER
@@ -107,6 +151,37 @@ Returns a string representation of the number rounded to n digits
 ### FOR IN
 
 ### Algorithms?
+
+### TASK: REVERSE A STRING
+
+```js
+let alphabets = 'abcdefg';
+const reverser = input =>
+	input
+		.split('')
+		.reverse()
+		.join('');
+
+console.log(reverser(alphabets)); // gfedcba
+```
+
+### TASK: CAPITALISE A STRING
+
+```js
+let str = 'foobar';
+const caps = input => input[0].toUpperCase() + input.slice(1);
+console.log(caps(str)); // Foobar
+
+// Capitalise first letter of every word
+let sentence = 'this is a sentence';
+const up = input =>
+	input
+		.split(' ')
+		.map(word => word[0].toUpperCase() + word.slice(1))
+		.join(' ');
+
+console.log(up(sentence)); // This Is A Sentence
+```
 
 ### TASK: REMOVE DUPLICATE VALUES IN AN ARRAY
 
