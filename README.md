@@ -46,6 +46,15 @@ console.log('HELLO'.charCodeAt(1)); // 69 (Char code of index 1 - 'E')
 let str = 'foobar';
 console.log(str.repeat(3)); // foobarfoobarfoobar
 
+// .replace(searchValue, newValue)
+// NOTE: this is commonly used with a regular expression (regex)
+let str = 'hello world';
+console.log(str.replace('hello', 'goodbye')); // goodbye world
+let ga = 'general assembly';
+console.log(ga.replace(/e/g, '3')); // g3n3ral ass3mbly (use of regex to select all 'e')
+let sentence = 'are vowels important?';
+console.log(sentence.replace(/[aeiou]/g, '')); // r vwls mprtnt?
+
 // .indexOf(input, fromIndex)
 let sentence = 'hello my friend';
 console.log(sentence.indexOf('my')); // 6
