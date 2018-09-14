@@ -12,27 +12,27 @@
 6. Symbol (New ES6)
 7. Object
 
-### STRING
+## STRING
 
 #### Template literals ``
 
 ```js
-let name = 'David';
-let school = 'General Assembly';
+const name = 'David';
+const school = 'General Assembly';
 console.log(`Hello my name is ${name} and I am a student at ${school}.`); // "Hello my name is David and I am a student at General Assembly."
 ```
 
 #### .toString()
 
 ```js
-let a = 123;
+const a = 123;
 console.log(a.toString()); // '123'
 ```
 
 #### .length
 
 ```js
-let alphabets = 'abcdefghijklmnopqrstuvwxyz';
+const alphabets = 'abcdefghijklmnopqrstuvwxyz';
 console.log(alphabets.length); // 26
 // indexing a string
 console.log(alphabets[0]); // a
@@ -57,7 +57,7 @@ console.log('HELLO'.charCodeAt(1)); // 69 (Char code of index 1 - 'E')
 #### .repeat(count)
 
 ```js
-let str = 'foobar';
+const str = 'foobar';
 console.log(str.repeat(3)); // foobarfoobarfoobar
 ```
 
@@ -65,31 +65,32 @@ console.log(str.repeat(3)); // foobarfoobarfoobar
 
 ```js
 // NOTE: this is commonly used with a regular expression (regex)
-let str = 'hello world';
+const str = 'hello world';
 console.log(str.replace('hello', 'goodbye')); // goodbye world
-let ga = 'general assembly';
+const ga = 'general assembly';
 console.log(ga.replace(/e/g, '3')); // g3n3ral ass3mbly (use of regex to select all 'e')
-let sentence = 'are vowels important?';
+const sentence = 'are vowels important?';
 console.log(sentence.replace(/[aeiou]/g, '')); // r vwls mprtnt?
 ```
 
-#### .indexOf(input, fromIndex)
+#### .indexOf(searchValue, fromIndex)
 
 ```js
-let sentence = 'hello my friend';
+const sentence = 'hello my friend';
 console.log(sentence.indexOf('my')); // 6
 console.log(sentence.indexOf('h')); // 0
 console.log(sentence.indexOf('hello')); // 0
-let first = sentence.indexOf('e');
+
+const first = sentence.indexOf('e');
 console.log(first); // 1
 console.log(sentence.indexOf('e', first + 1)); // 12 (use this to find the next index of)
 console.log(sentence.indexOf('waddup')); // -1
 ```
 
-#### .lastIndexOf(input, fromIndex)
+#### .lastIndexOf(searchValue, fromIndex)
 
 ```js
-let sentence = 'hello David, my friend';
+const sentence = 'hello David, my friend';
 console.log(sentence.lastIndexOf('D')); // 6
 console.log(sentence.indexOf('d')); // 10
 console.log(sentence.lastIndexOf('d')); // 21
@@ -102,7 +103,7 @@ console.log(sentence.lastIndexOf('l', 1)); // -1 (only searching from index 0 to
 #### .slice(start, end) similar but not the same as .substring()
 
 ```js
-let alphabets = 'abcdefghijklmnopqrstuvwxyz';
+const alphabets = 'abcdefghijklmnopqrstuvwxyz';
 console.log(alphabets.slice()); // abcdefghijklmnopqrstuvwxyz
 console.log(alphabets.slice(3)); // defghijklmnopqrstuvwxyz
 console.log(alphabets.slice(3, 7)); // defg (index 3 up to but not including 7)
@@ -113,7 +114,7 @@ console.log(alphabets.slice(-10, -4)); // qrstuv
 #### .split(separator, limit)
 
 ```js
-let str = 'hello world';
+const str = 'hello world';
 console.log(str.split()); // ['hello world']
 console.log(str.split('')); // ['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']
 console.log(str.split(' ')); // ['hello', 'world']
@@ -129,12 +130,12 @@ console.log('WADDUP BRO'.toLowerCase()); // waddup bro
 console.log('hello world'.toUpperCase()); // HELLO WORLD
 ```
 
-### NUMBER
+## NUMBER
 
 #### Shorthand operators
 
 ```js
-let a = 12;
+let a = 12; // let instead of const as they will not work with const
 
 a += 3; // 15
 // a = a + 3
@@ -152,13 +153,13 @@ a /= 3; // 4
 #### Comparing i++ vs ++i
 
 ```js
-let i = 1;
+let i = 1; // let instead of const as they will not work with const
 console.log(i++); // 1
 console.log(i); // 2
 ```
 
 ```js
-let i = 1;
+let i = 1; // let instead of const as they will not work with const
 console.log(++i); // 2
 console.log(i); // 2
 ```
@@ -185,18 +186,49 @@ Returns a string representation of the number rounded to n digits
 
 ## ARRAY
 
-### FOR OF
+#### .length
+
+```js
+const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
+console.log(arr.length); // 5
+```
+
+#### .indexOf(searchValue, fromIndex)
+
+```js
+const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
+console.log(arr.indexOf('charlie')); // 2
+```
+
+#### .findIndex(callback)
+
+```js
+// returns the index of the first element that satisfies the condition
+// this is essentially .indexOf() but with a search condition instead of a search value
+const arr = [5, 12, 8, 130, 44];
+console.log(arr.findIndex(element => element > 20)); // 3
+```
+
+#### .find(callback)
+
+```js
+// returns the value of the first element that satisfies the condition
+const arr = ['blue', 'red', 'green', 'purple', 'pink', 'yellow'];
+console.log(arr.find(color => color.length > 5)); // purple
+```
+
+#### FOR OF
 
 ## OBJECT
 
-### FOR IN
+#### FOR IN
 
 ### Algorithms?
 
 ### TASK: REVERSE A STRING
 
 ```js
-let alphabets = 'abcdefg';
+const alphabets = 'abcdefg';
 const reverser = input =>
 	input
 		.split('')
@@ -209,12 +241,12 @@ console.log(reverser(alphabets)); // gfedcba
 ### TASK: CAPITALISE A STRING
 
 ```js
-let str = 'foobar';
+const str = 'foobar';
 const caps = input => input[0].toUpperCase() + input.slice(1);
 console.log(caps(str)); // Foobar
 
 // Capitalise first letter of every word
-let sentence = 'this is a sentence';
+const sentence = 'this is a sentence';
 const up = input =>
 	input
 		.split(' ')
@@ -227,13 +259,13 @@ console.log(up(sentence)); // This Is A Sentence
 ### TASK: REMOVE DUPLICATE VALUES IN AN ARRAY
 
 ```js
-let arr = [1, 1, 2, 2, 2, 3, 3, 4, 4, 4, 5, 5, 6, 6, 7, 7, 8, 9, 0];
+const arr = [1, 1, 2, 2, 2, 3, 3, 4, 4, 4, 5, 5, 6, 6, 7, 7, 8, 9, 0];
 ```
 
 ### USING FOR LOOP
 
 ```js
-const removeDuplicatesFor = input => {
+const removeDuplicates = input => {
 	const res = [];
 	for (let i = 0; i < input.length; i++) {
 		// Single line if statement for only true value
@@ -241,7 +273,7 @@ const removeDuplicatesFor = input => {
 	}
 	return res;
 };
-console.log(removeDuplicatesFor(arr)); // [1,2,3,4,5,6,7,8,9,0]
+console.log(removeDuplicates(arr)); // [1,2,3,4,5,6,7,8,9,0]
 ```
 
 ### USING SET
