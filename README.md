@@ -16,8 +16,9 @@
 
 #### String methods
 
+##### Template literals ``
+
 ```js
-// Template literals ``
 let name = 'David';
 let school = 'General Assembly';
 console.log(`Hello my name is ${name} and I am a student at ${school}.`); // "Hello my name is David and I am a student at General Assembly."
