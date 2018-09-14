@@ -22,12 +22,18 @@
 let name = 'David';
 let school = 'General Assembly';
 console.log(`Hello my name is ${name} and I am a student at ${school}.`); // "Hello my name is David and I am a student at General Assembly."
+```
 
-// .toString()
+##### .toString()
+
+```js
 let a = 123;
 console.log(a.toString()); // '123'
+```
 
-// .length
+##### .length
+
+```js
 let alphabets = 'abcdefghijklmnopqrstuvwxyz';
 console.log(alphabets.length); // 26
 // indexing a string
