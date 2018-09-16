@@ -186,6 +186,55 @@ Returns a string representation of the number rounded to n digits
 
 ## ARRAY
 
+#### Array.isArray(input)
+
+```js
+Array.isArray([1, 2, 3]); // true
+Array.isArray({ foo: 123 }); // false
+Array.isArray('foobar'); // false
+Array.isArray(undefined); // false
+```
+
+#### .push(values)
+
+```js
+// adds one or more elements to the END of the array, it returns the new length of the array
+const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
+const arrLength = arr.push('felix', 'gerald');
+console.log(arr); // ['alex', 'ben', 'charlie', 'david', 'ethan', 'felix', 'gerald']
+console.log(arrLength); // 7
+```
+
+#### .unshift(values)
+
+```js
+// adds one or more elements to the START of an array, it returns the new length of the array
+const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
+const arrLength = arr.unshift('adam', 'alan');
+console.log(arr); // ['adam', 'alan', 'alex', 'ben', 'charlie', 'david', 'ethan']
+console.log(arrLength); // 7
+```
+
+#### .pop()
+
+```js
+// removes the LAST element from an array, it returns the element that was removed
+const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
+const popValue = arr.pop();
+console.log(arr); // ['alex', 'ben', 'charlie', 'david']
+console.log(popValue); // 'ethan'
+```
+
+#### .shift()
+
+```js
+// removes the FIRST element from an array and returns the element that was removed
+const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
+const shiftValue = arr.shift();
+console.log(arr); // ['ben', 'charlie', 'david', 'ethan']
+console.log(shiftValue); // 'alex'
+```
+
 #### .length
 
 ```js
@@ -198,6 +247,7 @@ console.log(arr.length); // 5
 ```js
 const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
 console.log(arr.indexOf('charlie')); // 2
+console.log(arr.indexOf('hello world')); // -1 (not found)
 ```
 
 #### .findIndex(callback)
@@ -215,6 +265,97 @@ console.log(arr.findIndex(element => element > 20)); // 3
 // returns the value of the first element that satisfies the condition
 const arr = ['blue', 'red', 'green', 'purple', 'pink', 'yellow'];
 console.log(arr.find(color => color.length > 5)); // purple
+```
+
+#### .includes(searchValue)
+
+```js
+const arr = ['blue', 'red', 'green', 'purple', 'pink', 'yellow'];
+console.log(arr.includes('red')); // true
+console.log(arr.includes('rainbow')); // false
+
+// alternative using .indexOf()
+console.log(arr.indexOf('red') !== -1); // true
+console.log(arr.indexOf('rainbow') !== -1); // false
+```
+
+#### .slice(fromIndex)
+
+```js
+// .slice() does not modify the original array
+const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
+console.log(arr.slice()); // shallow copy of arr
+console.log(arr.slice(2)); // ['charlie', 'david', 'ethan']
+console.log(arr.slice(2, 3)); // ['charlie']
+console.log(arr.slice(2, 4)); // ['charlie', 'david']
+console.log(arr.slice(-2)); // ['david', 'ethan']
+```
+
+#### .splice(startIndex, deleteCount, insertValues)
+
+```js
+// .splice() modifies the original array
+
+// insert values into an array
+const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
+arr.splice(2, 0, 'brandon', 'bob');
+console.log(arr); // ['alex', 'ben', 'brandon', 'bob', 'charlie', 'david', 'ethan']
+
+// delete values in an array
+const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
+arr.splice(2, 1);
+console.log(arr); // ['alex', 'ben', 'david', 'ethan']
+
+// get the elements that are removed
+const arr = ['alex', 'ben', 'brandon', 'bob', 'charlie', 'david', 'ethan'];
+const removedValues = arr.splice(2, 2);
+console.log(removedValues); // ['brandon', 'bob']
+console.log(arr); // ['alex', 'ben', 'charlie', 'david', 'ethan']
+
+// replace values in an array
+const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
+arr.splice(3, 1, 'daniel');
+console.log(arr); // ['alex', 'ben', 'charlie', 'daniel', 'ethan']
+```
+
+#### .forEach(callback)
+
+```js
+// .forEach() executes the callback function once for each array element
+const arr = [1, 2, 3, 4, 5];
+arr.forEach(i => console.log(`the number is ${i}`));
+// the number is 1
+// the number is 2
+// the number is 3
+// the number is 4
+// the number is 5
+```
+
+#### .map(callback)
+
+```js
+// .map() creates a new array with the results of the callback function
+const arr = [1, 2, 3, 4, 5];
+const doubleArr = arr.map(i => i * 2);
+console.log(doubleArr); // [2, 4, 6, 8, 10]
+```
+
+#### .filter(callback)
+
+```js
+// .filter() creates a new array with all elements that pass the test in the callback function
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const moreThanFive = arr.filter(i => i > 5);
+console.log(moreThanFive); // [6, 7, 8, 9, 10]
+```
+
+#### .reduce(callback, initialValue)
+
+```js
+// .reduce() executes a reducer function on each member of the array, returns a single output value
+const arr = [1, 2, 3, 4, 5];
+const total = arr.reduce((total, i) => total + i);
+console.log(total); // 15
 ```
 
 #### FOR OF
