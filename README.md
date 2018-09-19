@@ -182,6 +182,42 @@ Returns a string representation of the number rounded to n digits
 
 ## BOOLEAN
 
+#### falsy values
+
+1. false
+2. undefined
+3. null
+4. 0
+5. ''
+6. NaN
+
+#### truthy values (Everything that isn't falsy is truthy)
+
+1. true
+2. {} (empty object)
+3. [] (empty array)
+4. 69
+5. -1
+6. 1
+7. 'hello'
+
+#### while loop using the concept of truthy/falsy
+
+```js
+const arr = [1, 2, 3, 4, 5];
+// no need to compare using while(arr.length != 0)
+while (arr.length) {
+	console.log(arr.pop());
+}
+// 5
+// 4
+// 3
+// 2
+// 1
+
+console.log(arr); // []
+```
+
 ## NULL, UNDEFINED
 
 ## ARRAY
