@@ -231,46 +231,6 @@ Array.isArray('foobar'); // false
 Array.isArray(undefined); // false
 ```
 
-#### .push(values)
-
-```js
-// adds one or more elements to the END of the array, it returns the new length of the array
-const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
-const arrLength = arr.push('felix', 'gerald');
-console.log(arr); // ['alex', 'ben', 'charlie', 'david', 'ethan', 'felix', 'gerald']
-console.log(arrLength); // 7
-```
-
-#### .unshift(values)
-
-```js
-// adds one or more elements to the START of an array, it returns the new length of the array
-const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
-const arrLength = arr.unshift('adam', 'alan');
-console.log(arr); // ['adam', 'alan', 'alex', 'ben', 'charlie', 'david', 'ethan']
-console.log(arrLength); // 7
-```
-
-#### .pop()
-
-```js
-// removes the LAST element from an array, it returns the element that was removed
-const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
-const popValue = arr.pop();
-console.log(arr); // ['alex', 'ben', 'charlie', 'david']
-console.log(popValue); // 'ethan'
-```
-
-#### .shift()
-
-```js
-// removes the FIRST element from an array and returns the element that was removed
-const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
-const shiftValue = arr.shift();
-console.log(arr); // ['ben', 'charlie', 'david', 'ethan']
-console.log(shiftValue); // 'alex'
-```
-
 #### .length
 
 ```js
@@ -313,6 +273,122 @@ console.log(arr.includes('rainbow')); // false
 // alternative using .indexOf()
 console.log(arr.indexOf('red') !== -1); // true
 console.log(arr.indexOf('rainbow') !== -1); // false
+```
+
+#### .every(callback)
+
+```js
+// returns true if all elements in the array pass the condition
+const numbers = [1, 2, 3, 4, 5];
+const allGreaterThanZero = numbers.every(i => i > 0);
+console.log(allGreaterThanZero); // true
+
+// breaks out of the function once a false value has been found
+const arr = [1, 2, 3, 'hello', 4, 5];
+const allNumbers = arr.every(i => {
+	console.log(i);
+	return typeof i === 'number';
+});
+// 1
+// 2
+// 3
+// hello
+console.log(allNumbers); // false
+```
+
+#### .some(callback)
+
+```js
+// returns true if at least one element in the array passes the condition
+// breaks out of the function once a true value has been found
+const names = ['alex', 'ben', 'charlie', 'david', 'ethan'];
+const anyLongerThanFive = names.some(i => {
+	console.log(i);
+	return i.length > 5;
+});
+// alex
+// ben
+// charlie
+console.log(anyLongerThanFive); // true
+```
+
+#### .sort(optionalCompareFunction)
+
+```js
+// .sort() modifies the original array
+const months = ['March', 'January', 'February', 'December'];
+months.sort();
+console.log(months); // ['December', 'February', 'January', 'March'];
+
+// sort by ascending length of string
+const months = ['January', 'February', 'March', 'April', 'May', 'December'];
+months.sort((a, b) => a.length - b.length);
+console.log(months); // ['May', 'March', 'April', 'January', 'February', 'December']
+```
+
+```js
+const numbers = [1, 30, 4, 21, 101];
+numbers.sort();
+console.log(numbers); // [1, 101, 21, 30, 4]
+
+// sort by ascending order
+const numbers = [1, 30, 4, 21, 101];
+numbers.sort((a, b) => a - b);
+console.log(numbers); // [1, 4, 21, 30, 101]
+
+// sort by descending order
+const numbers = [1, 30, 4, 21, 101];
+numbers.sort((a, b) => b - a);
+console.log(numbers); // [101, 30, 21, 4, 1]
+```
+
+#### .reverse()
+
+```js
+// .reverse() modifies the original array
+const arr = ['one', 'two', 'three', 'four', 'five'];
+arr.reverse();
+console.log(arr); // ['five', 'four', 'three', 'two', 'one']
+```
+
+#### .push(values)
+
+```js
+// adds one or more elements to the END of the array, it returns the new length of the array
+const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
+const arrLength = arr.push('felix', 'gerald');
+console.log(arr); // ['alex', 'ben', 'charlie', 'david', 'ethan', 'felix', 'gerald']
+console.log(arrLength); // 7
+```
+
+#### .unshift(values)
+
+```js
+// adds one or more elements to the START of an array, it returns the new length of the array
+const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
+const arrLength = arr.unshift('adam', 'alan');
+console.log(arr); // ['adam', 'alan', 'alex', 'ben', 'charlie', 'david', 'ethan']
+console.log(arrLength); // 7
+```
+
+#### .pop()
+
+```js
+// removes the LAST element from an array, it returns the element that was removed
+const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
+const popValue = arr.pop();
+console.log(arr); // ['alex', 'ben', 'charlie', 'david']
+console.log(popValue); // 'ethan'
+```
+
+#### .shift()
+
+```js
+// removes the FIRST element from an array and returns the element that was removed
+const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
+const shiftValue = arr.shift();
+console.log(arr); // ['ben', 'charlie', 'david', 'ethan']
+console.log(shiftValue); // 'alex'
 ```
 
 #### .slice(fromIndex)
