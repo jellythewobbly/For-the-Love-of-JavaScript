@@ -406,6 +406,7 @@ console.log(arr.slice(-2)); // ['david', 'ethan']
 #### .splice(startIndex, deleteCount, insertValues)
 
 ```js
+// returns an array containing the deleted element(s) or an empty array
 // .splice() modifies the original array
 
 // insert values into an array
@@ -470,7 +471,32 @@ const total = arr.reduce((total, i) => total + i);
 console.log(total); // 15
 ```
 
-#### FOR OF
+```js
+// example use case for counting occurrence instead of using a for of loop
+const arr = [1, 2, 3, 4, 5, 6, 1, 1, 1];
+const count = (array, searchValue) => {
+	return array.reduce((accumulator, current) => {
+		// the line below implements the check
+		const occurrence = current === searchValue ? 1 : 0;
+		return accumulator + occurrence;
+		// 0 represents the initial count value
+	}, 0);
+};
+
+console.log(count(arr, 1)); // 4
+```
+
+#### for...of loop
+
+```js
+// use for...of to iterate over iterable objects such as strings and arrays
+const arr = [1, 2, 3, 4, 5];
+let total = 0;
+for (let number of arr) {
+	total += number;
+}
+console.log(total); // 15
+```
 
 ## OBJECT
 
