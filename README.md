@@ -465,15 +465,15 @@ console.log(moreThanFive); // [6, 7, 8, 9, 10]
 #### .reduce(callback, initialValue)
 
 ```js
-// .reduce() executes a reducer function on each member of the array, returns a single output value
-const arr = [1, 2, 3, 4, 5];
-const total = arr.reduce((total, i) => total + i);
+// .reduce() executes a reducer callback function on each member of the array, returns a single output value
+const numbers = [1, 2, 3, 4, 5];
+const total = numbers.reduce((total, current) => total + current);
 console.log(total); // 15
 ```
 
 ```js
 // example use case for counting occurrence instead of using a for of loop
-const arr = [1, 2, 3, 4, 5, 6, 1, 1, 1];
+const numbers = [1, 2, 3, 4, 5, 6, 1, 1, 1];
 const count = (array, searchValue) => {
 	return array.reduce((accumulator, current) => {
 		// the line below implements the check
@@ -483,7 +483,27 @@ const count = (array, searchValue) => {
 	}, 0);
 };
 
-console.log(count(arr, 1)); // 4
+console.log(count(numbers, 1)); // 4
+```
+
+```js
+// return the largest value in an array without using Math.max
+const numbers = [1, 3, 5, 7, 9, 8, 6, 4, 2, 1];
+const maxValue = arr => {
+	return arr.reduce((holder, current) => (holder > current ? holder : current));
+	// initial value implicitly set as the first element in the array
+};
+
+console.log(maxValue(numbers)); // 9
+
+// return the smallest value in an array without using Math.min
+const numbers = [1, 3, 5, 7, 9, 8, 6, 4, 2, 1];
+const minValue = arr => {
+	return arr.reduce((holder, current) => (holder < current ? holder : current));
+	// initial value implicitly set as the first element in the array
+};
+
+console.log(minValue(numbers)); // 1
 ```
 
 #### for...of loop
