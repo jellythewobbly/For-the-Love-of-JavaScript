@@ -564,18 +564,54 @@ console.log(alex.age); // 18 (AS OF 2018)
 #### for...in
 
 ```js
+// use for...in to iterate over an object
 const book = {
 	title: 'JavaScript: The Definitive Guide',
 	author: 'David Flanagan',
 	publisher: "O'Reilly Media"
 };
 
-for (let property in book) {
-	console.log(`${property} is ${book[property]}`);
+for (let key in book) {
+	console.log(`${key} is ${book[key]}`);
 }
 // title is JavaScript: The Definitive Guide
 // author is David Flanagan
 // publisher is O'Reilly Media
+```
+
+#### Object.keys()
+
+```js
+// returns an array of the object's keys
+const person = {
+	name: 'mary',
+	age: 32
+};
+console.log(Object.keys(person)); // ['name', 'age']
+```
+
+#### Object.values()
+
+```js
+// returns an array of the object's values
+const person = {
+	name: 'mary',
+	age: 32
+};
+console.log(Object.values(person)); // ['mary', 32]
+```
+
+#### in operator
+
+```js
+// returns true if the property is in the object
+const person = {
+	name: 'mary',
+	age: 32
+};
+
+if ('name' in person) console.log(`person has a name ${person.name}`);
+// person has a name mary
 ```
 
 ### Algorithms?
