@@ -506,7 +506,7 @@ const minValue = arr => {
 console.log(minValue(numbers)); // 1
 ```
 
-#### for...of loop
+#### for...of
 
 ```js
 // use for...of to iterate over iterable objects such as strings and arrays
@@ -520,7 +520,63 @@ console.log(total); // 15
 
 ## OBJECT
 
-#### FOR IN
+#### Factory function
+
+```js
+// return keyword has to be used with factory function
+// note that there is no need for name: name, gender: gender
+// get keyword used to define a getter (access an object's method like a property)
+function createPerson(name, gender, yearOfBirth) {
+	return {
+		location: 'Singapore',
+		name,
+		gender,
+		get age() {
+			return new Date().getFullYear() - yearOfBirth;
+		}
+	};
+}
+
+const peter = createPerson('peter', 'male', 1995);
+console.log(peter.location); // Singapore
+console.log(peter.name); // peter
+console.log(peter.age); // 23 (AS OF 2018)
+```
+
+#### Constructor function
+
+```js
+// new keyword has to be used with constructor function
+// note uppercase first letter (Pascal case) used for constructor function
+function Person(name, gender, yearOfBirth) {
+	this.location = 'Singapore';
+	this.name = name;
+	this.gender = gender;
+	this.age = new Date().getFullYear() - yearOfBirth;
+}
+
+const alex = new Person('alex', 'male', 2000);
+console.log(alex.location); // Singapore
+console.log(alex.name); // alex
+console.log(alex.age); // 18 (AS OF 2018)
+```
+
+#### for...in
+
+```js
+const book = {
+	title: 'JavaScript: The Definitive Guide',
+	author: 'David Flanagan',
+	publisher: "O'Reilly Media"
+};
+
+for (let property in book) {
+	console.log(`${property} is ${book[property]}`);
+}
+// title is JavaScript: The Definitive Guide
+// author is David Flanagan
+// publisher is O'Reilly Media
+```
 
 ### Algorithms?
 
