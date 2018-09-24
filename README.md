@@ -130,6 +130,19 @@ console.log('WADDUP BRO'.toLowerCase()); // waddup bro
 console.log('hello world'.toUpperCase()); // HELLO WORLD
 ```
 
+#### .match(regularExpression)
+
+Returns an array of strings that match the regular expression
+
+```js
+const randomString =
+	'the123quick456brown789fox!@#jumped$%^over&*(the)_+lazy{}|dog';
+const onlyWords = randomString.match(/[a-z]+/g);
+console.log(onlyWords);
+// ['the', 'quick', 'brown', 'fox', 'jumped', 'over', 'the', 'lazy','dog']
+console.log(onlyWords.join(' ')); // 'the quick brown fox jumped over the lazy dog'
+```
+
 ## NUMBER
 
 #### Shorthand operators
@@ -178,6 +191,82 @@ Returns a string representation of the number rounded to n digits
 
 ```js
 (12345.6789).toPrecision(6); // "12345.7"
+```
+
+#### Number.MAX_SAFE_INTEGER
+
+Due to the double-precision floating-point format, using a number LARGER THAN 9007199254740991 may result in loss of precision
+
+```js
+const x = Number.MAX_SAFE_INTEGER + 1;
+const y = Number.MAX_SAFE_INTEGER + 2;
+console.log(x === y); // true
+```
+
+#### Number.MIN_SAFE_INTEGER
+
+Due to the double-precision floating-point format, using a number SMALLER THAN -9007199254740991 may result in loss of precision
+
+```js
+const x = Number.MIN_SAFE_INTEGER - 1;
+const y = Number.MIN_SAFE_INTEGER - 2;
+console.log(x === y); // true
+```
+
+#### MATH
+
+Not going into detail as these are pretty self explanatory
+
+```js
+Math.random(); // returns a floating point number between 0 to 1 (inclusive of 0, but not 1)
+
+Math.floor(input); // returns the largest integer less than or equal to a given number
+Math.ceil(input); // returns the smallest integer greater than or equal to a given number
+
+Math.trunc(input); // returns the integer part of a number by removing the decimals
+Math.round(input); // returns the value of a number rounded to the nearest integer
+
+Math.pow(base, exponent); // returns the base raised to the exponent e.g. Math.pow(4, 2) = 16
+Math.sqrt(input); // returns the square root of a number
+Math.cbrt(input); // returns the cube root of a number
+
+Math.PI; // returns 3.141592653589793
+```
+
+#### Implicit coercion
+
+Javascript will attempt to coerce an unexpected value type to the expected type
+Does not work with addition as it leads to concatenation
+
+```js
+console.log('6' + '9'); // '69' (string)
+console.log('10' - '7'); // 3 (number)
+console.log('3' * '3'); // 9 (number)
+console.log('10' / '2'); // 5 (number)
+```
+
+#### NaN
+
+NaN is a special value, it is never equal to another NaN value
+Comparing/equating anything with NaN will result in false
+
+```js
+console.log(NaN == NaN); // false
+console.log('hello' == NaN); // false
+console.log(['this', 'is', 'an', 'array'] == NaN); // false
+console.log({ name: 'ben', age: 20 } == NaN); // false
+
+console.log(NaN != NaN); // true
+```
+
+#### isNaN(input)
+
+To test for NaN, use isNaN()
+
+```js
+console.log(isNaN('hello')); // true
+console.log(isNaN(['this', 'is', 'an', 'array'])); // true
+console.log(isNaN({ name: 'ben', age: 20 })); // true
 ```
 
 ## BOOLEAN
@@ -248,17 +337,19 @@ console.log(arr.indexOf('hello world')); // -1 (not found)
 
 #### .findIndex(callback)
 
+Returns the index of the first element that satisfies the condition
+.findIndex() is essentially .indexOf() but with a search condition instead of a search value
+
 ```js
-// returns the index of the first element that satisfies the condition
-// this is essentially .indexOf() but with a search condition instead of a search value
 const arr = [5, 12, 8, 130, 44];
 console.log(arr.findIndex(element => element > 20)); // 3
 ```
 
 #### .find(callback)
 
+Returns the value of the first element that satisfies the condition
+
 ```js
-// returns the value of the first element that satisfies the condition
 const arr = ['blue', 'red', 'green', 'purple', 'pink', 'yellow'];
 console.log(arr.find(color => color.length > 5)); // purple
 ```
@@ -277,8 +368,9 @@ console.log(arr.indexOf('rainbow') !== -1); // false
 
 #### .every(callback)
 
+Returns true if all elements in the array pass the condition
+
 ```js
-// returns true if all elements in the array pass the condition
 const numbers = [1, 2, 3, 4, 5];
 const allGreaterThanZero = numbers.every(i => i > 0);
 console.log(allGreaterThanZero); // true
@@ -298,8 +390,9 @@ console.log(allNumbers); // false
 
 #### .some(callback)
 
+Returns true if at least one element in the array passes the condition
+
 ```js
-// returns true if at least one element in the array passes the condition
 // breaks out of the function once a true value has been found
 const names = ['alex', 'ben', 'charlie', 'david', 'ethan'];
 const anyLongerThanFive = names.some(i => {
@@ -353,8 +446,9 @@ console.log(arr); // ['five', 'four', 'three', 'two', 'one']
 
 #### .push(values)
 
+Adds one or more elements to the END of the array, it returns the new length of the array
+
 ```js
-// adds one or more elements to the END of the array, it returns the new length of the array
 const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
 const arrLength = arr.push('felix', 'gerald');
 console.log(arr); // ['alex', 'ben', 'charlie', 'david', 'ethan', 'felix', 'gerald']
@@ -363,8 +457,9 @@ console.log(arrLength); // 7
 
 #### .unshift(values)
 
+Adds one or more elements to the START of an array, it returns the new length of the array
+
 ```js
-// adds one or more elements to the START of an array, it returns the new length of the array
 const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
 const arrLength = arr.unshift('adam', 'alan');
 console.log(arr); // ['adam', 'alan', 'alex', 'ben', 'charlie', 'david', 'ethan']
@@ -373,8 +468,9 @@ console.log(arrLength); // 7
 
 #### .pop()
 
+Removes the LAST element from an array, it returns the element that was removed
+
 ```js
-// removes the LAST element from an array, it returns the element that was removed
 const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
 const popValue = arr.pop();
 console.log(arr); // ['alex', 'ben', 'charlie', 'david']
@@ -383,8 +479,9 @@ console.log(popValue); // 'ethan'
 
 #### .shift()
 
+Removes the FIRST element from an array and returns the element that was removed
+
 ```js
-// removes the FIRST element from an array and returns the element that was removed
 const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
 const shiftValue = arr.shift();
 console.log(arr); // ['ben', 'charlie', 'david', 'ethan']
@@ -405,8 +502,9 @@ console.log(arr.slice(-2)); // ['david', 'ethan']
 
 #### .splice(startIndex, deleteCount, insertValues)
 
+Returns an array containing the deleted element(s) or an empty array
+
 ```js
-// returns an array containing the deleted element(s) or an empty array
 // .splice() modifies the original array
 
 // insert values into an array
@@ -433,8 +531,9 @@ console.log(arr); // ['alex', 'ben', 'charlie', 'daniel', 'ethan']
 
 #### .forEach(callback)
 
+.forEach() executes the callback function once for each array element
+
 ```js
-// .forEach() executes the callback function once for each array element
 const arr = [1, 2, 3, 4, 5];
 arr.forEach(i => console.log(`the number is ${i}`));
 // the number is 1
@@ -446,8 +545,9 @@ arr.forEach(i => console.log(`the number is ${i}`));
 
 #### .map(callback)
 
+.map() creates a new array with the results of the callback function
+
 ```js
-// .map() creates a new array with the results of the callback function
 const arr = [1, 2, 3, 4, 5];
 const doubleArr = arr.map(i => i * 2);
 console.log(doubleArr); // [2, 4, 6, 8, 10]
@@ -455,8 +555,9 @@ console.log(doubleArr); // [2, 4, 6, 8, 10]
 
 #### .filter(callback)
 
+.filter() creates a new array with all elements that pass the test in the callback function
+
 ```js
-// .filter() creates a new array with all elements that pass the test in the callback function
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const moreThanFive = arr.filter(i => i > 5);
 console.log(moreThanFive); // [6, 7, 8, 9, 10]
@@ -464,8 +565,9 @@ console.log(moreThanFive); // [6, 7, 8, 9, 10]
 
 #### .reduce(callback, initialValue)
 
+.reduce() executes a reducer callback function on each member of the array, returns a single output value
+
 ```js
-// .reduce() executes a reducer callback function on each member of the array, returns a single output value
 const numbers = [1, 2, 3, 4, 5];
 const total = numbers.reduce((total, current) => total + current);
 console.log(total); // 15
@@ -508,8 +610,9 @@ console.log(minValue(numbers)); // 1
 
 #### for...of
 
+Use for...of to iterate over iterable objects such as strings and arrays
+
 ```js
-// use for...of to iterate over iterable objects such as strings and arrays
 const arr = [1, 2, 3, 4, 5];
 let total = 0;
 for (let number of arr) {
@@ -563,8 +666,10 @@ console.log(alex.age); // 18 (AS OF 2018)
 
 #### for...in
 
+Use for...in to iterate over an object
+
 ```js
-// use for...in to iterate over an object
+// for...in returns the object's own instance properties/methods and also those from the prototype
 const book = {
 	title: 'JavaScript: The Definitive Guide',
 	author: 'David Flanagan',
@@ -581,8 +686,10 @@ for (let key in book) {
 
 #### Object.keys()
 
+Returns an array of the object's keys
+
 ```js
-// returns an array of the object's keys
+// returns only the object's own instance properties/methods
 const person = {
 	name: 'mary',
 	age: 32
@@ -592,8 +699,9 @@ console.log(Object.keys(person)); // ['name', 'age']
 
 #### Object.values()
 
+Returns an array of the object's values
+
 ```js
-// returns an array of the object's values
 const person = {
 	name: 'mary',
 	age: 32
@@ -603,8 +711,9 @@ console.log(Object.values(person)); // ['mary', 32]
 
 #### in operator
 
+Returns true if the property is in the object
+
 ```js
-// returns true if the property is in the object
 const person = {
 	name: 'mary',
 	age: 32
@@ -612,6 +721,53 @@ const person = {
 
 if ('name' in person) console.log(`person has a name ${person.name}`);
 // person has a name mary
+```
+
+#### prototypes
+
+```js
+// all objects inherit properties and methods from a prototype, you can think of prototypes as the parent
+function Person(name, gender, yearOfBirth) {
+	this.location = 'Singapore';
+	this.name = name;
+	this.gender = gender;
+	this.age = new Date().getFullYear() - yearOfBirth;
+}
+
+const jack = new Person('jack', 'male', 1980);
+console.log(Object.getPrototypeOf(jack)); // returns the prototype of Person
+
+console.log(jack.constructor); // returns the Person function
+```
+
+```js
+// modifying the example above, adding methods to the Person prototype
+function Person(name, gender, yearOfBirth) {
+	this.name = name;
+	this.gender = gender;
+	this.yearOfBirth = yearOfBirth;
+}
+
+Person.prototype.getAge = function() {
+	return new Date().getFullYear() - this.yearOfBirth;
+};
+Person.prototype.walk = function() {
+	console.log(`${this.name} is walking...`);
+};
+
+const sam = new Person('sam', 'female', 1998);
+sam.walk(); // sam is walking...
+console.log(sam.getAge()); // 20 (AS OF 2018)
+```
+
+```js
+// comparing the prototypes of objects, continuing from the example above
+const sam = new Person('sam', 'female', 1998);
+const daniel = new Person('daniel', 'male', 1950);
+
+console.log(Object.getPrototypeOf(daniel) === Object.getPrototypeOf(sam)); // true
+
+console.log(Object.getPrototypeOf(sam) === Person.prototype); // true
 ```
 
 ### Algorithms?
@@ -669,7 +825,7 @@ console.log(removeDuplicates(arr)); // [1,2,3,4,5,6,7,8,9,0]
 
 ### USING SET
 
-"The Set object lets you store unique values of any type, whether primitive values or object references."
+The Set object lets you store unique values of any type, whether primitive values or object references.
 
 ```js
 const removeDuplicatesSet = input => [...new Set(input)];
