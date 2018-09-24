@@ -235,7 +235,7 @@ Math.PI; // returns 3.141592653589793
 
 #### Implicit coercion
 
-Javascript will attempt to coerce an unexpected value type to the expected type.
+Javascript will attempt to coerce an unexpected value type to the expected type
 
 Does not work with addition as it leads to concatenation
 
@@ -248,7 +248,7 @@ console.log('10' / '2'); // 5 (number)
 
 #### NaN
 
-NaN is a special value, it is never equal to another NaN value.
+NaN is a special value, it is never equal to another NaN value
 
 Comparing/equating anything with NaN will result in false
 
