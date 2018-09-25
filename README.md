@@ -309,6 +309,53 @@ while (arr.length) {
 console.log(arr); // []
 ```
 
+#### short circuit evaluation
+
+Both || and && evaluate from left to right
+
+Using ||
+
+if left is truthy, left will be returned
+
+if left is falsy, right will be returned
+
+```js
+const people = [
+	{ name: 'jerry', occupation: 'teacher' },
+	{ name: 'sandra', occupation: 'dentist' },
+	{ name: 'sloth' }
+];
+
+for (let i of people) {
+	console.log(`${i.name}: ${i.occupation || 'jobless'}`);
+}
+// jerry: teacher
+// sandra: dentist
+// sloth: jobless
+```
+
+Using &&
+
+if left is truthy, right will be returned
+
+if left is falsy, left will be returned
+
+```js
+let online = true;
+
+const getData = () => {
+	console.log('SENDING REQUEST...');
+	console.log('STATUS 200 RECEIVED');
+};
+
+if (online) {
+	getData();
+}
+
+// above if statement can be refactored to
+online && getData();
+```
+
 ## NULL, UNDEFINED
 
 ## ARRAY
