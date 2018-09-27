@@ -673,6 +673,41 @@ console.log(total); // 15
 
 ## OBJECT
 
+#### Object literal
+
+Easiest way to create an object by using the object literal syntax
+
+```js
+const obj = {
+	key1: 'value1',
+	key2: 'value2',
+	key3: 'value3'
+};
+
+// getting properties
+console.log(obj.key1); // value1
+console.log(obj['key2']); // value2
+
+// adding new properties
+// use the square bracket notation for special characters or for an unknown key
+obj.key4 = 'value4'; // dot notation
+obj['special-key'] = 'special value'; // square bracket notation
+console.log(obj);
+/*
+{ key1: 'value1',
+  key2: 'value2',
+  key3: 'value3',
+  key4: 'value4',
+  'special-key': 'special value' }
+*/
+
+// removing properties
+delete obj.key4;
+delete obj['special-key'];
+console.log(obj);
+// { key1: 'value1', key2: 'value2', key3: 'value3' }
+```
+
 #### Factory function
 
 ```js
@@ -734,7 +769,7 @@ for (let key in book) {
 // publisher is O'Reilly Media
 ```
 
-#### Object.keys()
+#### Object.keys(obj)
 
 Returns an array of the object's keys
 
@@ -747,7 +782,7 @@ const person = {
 console.log(Object.keys(person)); // ['name', 'age']
 ```
 
-#### Object.values()
+#### Object.values(obj)
 
 Returns an array of the object's values
 
@@ -771,6 +806,44 @@ const person = {
 
 if ('name' in person) console.log(`person has a name ${person.name}`);
 // person has a name mary
+```
+
+#### Object.defineProperty(obj, property, descriptor)
+
+With the descriptor, we can modify the way the property behaves
+
+By default, the properties added are immutable and not enumerable
+
+```js
+const exampleObject = { hello: 'world' };
+Object.defineProperty(exampleObject, 'exampleKey', {
+	value: 'exampleValue'
+});
+
+console.log(exampleObject);
+// browser: {hello: 'world', exampleKey: "exampleValue"}
+// node: {hello: 'world'}
+console.log('exampleKey' in exampleObject); // true
+console.log(Object.keys(exampleObject)); // ['hello']
+for (let key in exampleObject) console.log(key); // hello
+
+delete exampleObject.hello;
+delete exampleObject.exampleKey;
+console.log(exampleObject);
+// browser: {exampleKey: "exampleValue"}
+// node: {}
+```
+
+#### Object.assign(target, ...sources)
+
+Create a shallow copy by using an empty object as the target
+
+```js
+const object1 = { a: 1, b: 2, c: 3 };
+const clone = Object.assign({}, object1);
+
+console.log(clone); // {a: 1, b: 2, c: 3}
+console.log(object1 === clone); // false (object1 and clone are 2 different objects)
 ```
 
 #### prototypes
