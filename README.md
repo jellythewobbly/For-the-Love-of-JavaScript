@@ -830,7 +830,7 @@ for (let key in exampleObject) console.log(key); // hello
 delete exampleObject.hello;
 delete exampleObject.exampleKey;
 console.log(exampleObject);
-// browser: {exampleKey: "exampleValue"}
+// browser: { exampleKey: "exampleValue" }
 // node: {}
 ```
 
@@ -842,8 +842,33 @@ Create a shallow copy by using an empty object as the target
 const object1 = { a: 1, b: 2, c: 3 };
 const clone = Object.assign({}, object1);
 
-console.log(clone); // {a: 1, b: 2, c: 3}
+console.log(clone); // { a: 1, b: 2, c: 3 }
 console.log(object1 === clone); // false (object1 and clone are 2 different objects)
+```
+
+Use Object.assign() to merge objects
+
+```js
+const obj1 = { a: 1 };
+const obj2 = { b: 2 };
+const obj3 = { c: 3 };
+
+const newObj = Object.assign(obj1, obj2, obj3);
+console.log(newObj); // { a: 1, b: 2, c: 3 }
+console.log(obj1); // { a: 1, b: 2, c: 3 }
+console.log(newObj === obj1); // true
+```
+
+Alternative using the spread operator (reassign a new object)
+
+```js
+let obj1 = { a: 1 };
+const obj2 = { b: 2 };
+const obj3 = { c: 3 };
+
+const newObj = { ...obj1, ...obj2, ...obj3 };
+obj1 = newObj;
+console.log(newObj); // { a: 1, b: 2, c: 3 }
 ```
 
 #### prototypes
