@@ -871,6 +871,94 @@ obj1 = newObj;
 console.log(newObj); // { a: 1, b: 2, c: 3 }
 ```
 
+#### "this" keyword
+
+In most cases, the value of "this" is determined by how a function is called.
+
+If strict mode is enabled, "this" that returns window in browser/global in node will instead return undefined
+
+ES6 arrow functions do not rebind the "this" keyword
+
+```js
+const person = {
+	name: 'george',
+	getThis() {
+		return this;
+	},
+	getDeepThis() {
+		function example() {
+			return this;
+		}
+		return example();
+	},
+	arrowDeepThis() {
+		const arrowFunc = () => {
+			return this;
+		};
+		return arrowFunc();
+	}
+};
+
+console.log(person.getThis()); // person object
+console.log(person.getDeepThis()); // window in browser, global in node
+console.log(person.arrowDeepThis()); // person object
+```
+
+#### .bind() .call() .apply()
+
+These 3 methods all involve the use of the "this" keyword
+
+.bind(thisArg)
+
+```js
+const person = {
+	name: 'george',
+	getThis() {
+		return this;
+	},
+	getDeepThis() {
+		function example() {
+			return this;
+		}
+		return example.bind(this)();
+	}
+};
+
+console.log(person.getDeepThis()); // person object
+```
+
+.call(thisArg, ...arguments)
+
+```js
+function printer(greeting) {
+	console.log(`${greeting}, this is ${this.name}`);
+}
+
+const object1 = {
+	name: 'object1'
+};
+
+const object2 = {
+	name: 'object2'
+};
+
+printer.call(object2, 'Hi there'); // Hi there, this is object2
+```
+
+.apply(thisArg, [arguments array])
+
+```js
+function printer(...numbers) {
+	console.log(`In ${this.name}, we have ${numbers}`);
+}
+
+const object1 = {
+	name: 'object1'
+};
+
+printer.apply(object1, [100, 99, 98, 97, 96, 95]); // In object1, we have 100,99,98,97,96,95
+```
+
 #### ES6 Classes
 
 ES6 Classes are syntactic sugar over constructor functions
