@@ -871,6 +871,20 @@ obj1 = newObj;
 console.log(newObj); // { a: 1, b: 2, c: 3 }
 ```
 
+#### ES6 Classes
+
+ES6 Classes are syntactic sugar over constructor functions
+
+```js
+class Person {
+	constructor(name, gender, yearOfBirth) {
+		this.name = name;
+		this.gender = gender;
+		this.age = new Date().getFullYear() - yearOfBirth;
+	}
+}
+```
+
 #### prototypes
 
 ```js
