@@ -1018,6 +1018,30 @@ const daniel = new Person('daniel', 'male', 1950);
 console.log(Object.getPrototypeOf(daniel) === Object.getPrototypeOf(sam)); // true
 
 console.log(Object.getPrototypeOf(sam) === Person.prototype); // true
+
+console.log(sam.__proto__ === Person.prototype); // true
+```
+
+#### Object.create(proto)
+
+Object.create() creates a new object, setting the argument object as the new object's \_\_proto\_\_
+
+```js
+// this is an object, not a constructor function
+const person = {
+	isHuman: true,
+	greeting: function() {
+		console.log(
+			`My name is ${this.name}. Am I human? ${this.isHuman ? 'Yes' : 'No'}`
+		);
+	}
+};
+
+const james = Object.create(person);
+james.name = 'James';
+james.greeting(); // My name is James. Am I human? Yes
+
+james.__proto__ === person; // true
 ```
 
 ### Algorithms?
