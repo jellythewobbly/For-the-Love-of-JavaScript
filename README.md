@@ -100,6 +100,14 @@ console.log(sentence.lastIndexOf('l', 2)); // 2 (only searching from index 0 to 
 console.log(sentence.lastIndexOf('l', 1)); // -1 (only searching from index 0 to index 1 of the string - 'he')
 ```
 
+#### .trim()
+
+```js
+// Removes whitespace from both ends of the string
+const greeting = '   Hello world!   ';
+console.log(greeting.trim()); // Hello world!
+```
+
 #### .slice(start, end) similar but not the same as .substring()
 
 ```js
@@ -397,7 +405,7 @@ console.log(arr.findIndex(element => element > 20)); // 3
 
 #### .find(callback)
 
-Returns the value of the first element that satisfies the condition
+Returns the value of the first element that satisfies the condition. Otherwise undefined is returned.
 
 ```js
 const arr = ['blue', 'red', 'green', 'purple', 'pink', 'yellow'];
