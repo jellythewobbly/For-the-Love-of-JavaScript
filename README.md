@@ -1097,7 +1097,7 @@ async function getUserData() {
 
 getUserData();
 // Searching database for user
-
+// * 2 seconds delay *
 // Received result from database
 // { name: 'Mark', age: 32 }
 ```
