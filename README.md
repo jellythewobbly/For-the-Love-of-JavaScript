@@ -1052,6 +1052,56 @@ james.greeting(); // My name is James. Am I human? Yes
 james.__proto__ === person; // true
 ```
 
+#### Promise & Async/Await
+
+The states of a promise:
+
+pending: initial state, neither fulfilled nor rejected.
+
+resolved/fulfilled: the operation completed successfully.
+
+rejected: the operation failed.
+
+```js
+const p = new Promise((resolve, reject) => {
+	// perform async operation here
+	setTimeout(() => {
+		resolve('Success!'); // pending => resolved/fulfilled
+		reject(new Error('Error!')); // pending => rejected
+	}, 2000);
+});
+
+p.then(result => console.log(result)).catch(err =>
+	console.log(`Error: ${err.message}`)
+);
+// Success! (after 2 seconds)
+```
+
+Async/await
+
+```js
+function databaseQuery2Seconds() {
+	return new Promise(resolve => {
+		setTimeout(() => {
+			console.log('Received result from database');
+			resolve({ name: 'Mark', age: 32 });
+		}, 2000);
+	});
+}
+
+async function getUserData() {
+	console.log('Searching database for user');
+	const result = await databaseQuery2Seconds();
+	console.log(result);
+}
+
+getUserData();
+// Searching database for user
+
+// Received result from database
+// { name: 'Mark', age: 32 }
+```
+
 ### Algorithms?
 
 ### TASK: REVERSE A STRING
