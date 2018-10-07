@@ -331,7 +331,7 @@ if left is falsy, right will be returned
 const people = [
 	{ name: 'jerry', occupation: 'teacher' },
 	{ name: 'sandra', occupation: 'dentist' },
-	{ name: 'sloth' }
+	{ name: 'sloth' },
 ];
 
 for (let i of people) {
@@ -689,7 +689,7 @@ Easiest way to create an object by using the object literal syntax
 const obj = {
 	key1: 'value1',
 	key2: 'value2',
-	key3: 'value3'
+	key3: 'value3',
 };
 
 // getting properties
@@ -729,7 +729,7 @@ function createPerson(name, gender, yearOfBirth) {
 		gender,
 		get age() {
 			return new Date().getFullYear() - yearOfBirth;
-		}
+		},
 	};
 }
 
@@ -766,7 +766,7 @@ Use for...in to iterate over an object
 const book = {
 	title: 'JavaScript: The Definitive Guide',
 	author: 'David Flanagan',
-	publisher: "O'Reilly Media"
+	publisher: "O'Reilly Media",
 };
 
 for (let key in book) {
@@ -785,7 +785,7 @@ Returns an array of the object's keys
 // returns only the object's own instance properties/methods
 const person = {
 	name: 'mary',
-	age: 32
+	age: 32,
 };
 console.log(Object.keys(person)); // ['name', 'age']
 ```
@@ -797,23 +797,60 @@ Returns an array of the object's values
 ```js
 const person = {
 	name: 'mary',
-	age: 32
+	age: 32,
 };
 console.log(Object.values(person)); // ['mary', 32]
 ```
 
-#### in operator
+#### Object.entries(obj)
 
-Returns true if the property is in the object
+Returns an array of the object's own enumerable property [key, value] pairs
 
 ```js
 const person = {
 	name: 'mary',
-	age: 32
+	age: 32,
+};
+console.log(Object.entries(person)); // [['name', 'mary'], ['age', 32]]
+```
+
+#### in operator
+
+Returns true if the property is in the object or its prototype chain
+
+```js
+const person = {
+	name: 'mary',
+	age: 32,
 };
 
 if ('name' in person) console.log(`person has a name ${person.name}`);
 // person has a name mary
+```
+
+#### .hasOwnProperty(property)
+
+Returns true if the object has the specified property as its own property (not inherited)
+
+```js
+function Animal(name, species) {
+	this.name = name;
+	this.species = species;
+}
+
+Animal.prototype.eat = function() {
+	console.log('Eating!');
+};
+
+const cooper = new Animal('Cooper', 'dog');
+cooper.bark = function() {
+	console.log('WOOF WOOF!');
+};
+
+cooper.eat(); // Eating!
+cooper.bark(); // WOOF WOOF!
+console.log(cooper.hasOwnProperty('eat')); // false (inherited from prototype)
+console.log(cooper.hasOwnProperty('bark')); // true
 ```
 
 #### Object.defineProperty(obj, property, descriptor)
@@ -825,7 +862,7 @@ By default, the properties added are immutable and not enumerable
 ```js
 const exampleObject = { hello: 'world' };
 Object.defineProperty(exampleObject, 'exampleKey', {
-	value: 'exampleValue'
+	value: 'exampleValue',
 });
 
 console.log(exampleObject);
@@ -904,7 +941,7 @@ const person = {
 			return this;
 		};
 		return arrowFunc();
-	}
+	},
 };
 
 console.log(person.getThis()); // person object
@@ -929,7 +966,7 @@ const person = {
 			return this;
 		}
 		return example.bind(this)();
-	}
+	},
 };
 
 console.log(person.getDeepThis()); // person object
@@ -943,11 +980,11 @@ function printer(greeting) {
 }
 
 const object1 = {
-	name: 'object1'
+	name: 'object1',
 };
 
 const object2 = {
-	name: 'object2'
+	name: 'object2',
 };
 
 printer.call(object2, 'Hi there'); // Hi there, this is object2
@@ -961,7 +998,7 @@ function printer(...numbers) {
 }
 
 const object1 = {
-	name: 'object1'
+	name: 'object1',
 };
 
 printer.apply(object1, [100, 99, 98, 97, 96, 95]); // In object1, we have 100,99,98,97,96,95
@@ -1042,7 +1079,7 @@ const person = {
 		console.log(
 			`My name is ${this.name}. Am I human? ${this.isHuman ? 'Yes' : 'No'}`
 		);
-	}
+	},
 };
 
 const james = Object.create(person);
