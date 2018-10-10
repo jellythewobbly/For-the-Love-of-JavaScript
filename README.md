@@ -621,14 +621,30 @@ const moreThanFive = arr.filter(i => i > 5);
 console.log(moreThanFive); // [6, 7, 8, 9, 10]
 ```
 
+```js
+const stuff = ['foo', 'bar', 'MacBook', 'this is a long string'];
+const longWords = stuff.filter(i => i.length > 5);
+console.log(longWords); // ['MacBook', 'this is a long string']
+```
+
 #### .reduce(callback, initialValue)
 
-.reduce() executes a reducer callback function on each member of the array, returns a single output value
+.reduce() executes a reducer callback function on each member of the array, returns a single output value. The initialValue is optional.
 
 ```js
 const numbers = [1, 2, 3, 4, 5];
 const total = numbers.reduce((total, current) => total + current);
 console.log(total); // 15
+```
+
+```js
+// with initial value
+function addTen(arr) {
+	return arr.reduce((acc, cur) => acc + cur, 10);
+}
+
+const numbers = [1, 3, 5];
+console.log(addTen(numbers)); // 19
 ```
 
 ```js
