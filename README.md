@@ -601,6 +601,18 @@ arr.forEach(i => console.log(`the number is ${i}`));
 // the number is 5
 ```
 
+.forEach() with index
+
+```js
+const arr = ['a', 'b', 'c', 'd', 'e'];
+arr.forEach((value, index) => console.log(`index ${index}: ${value}`));
+// index 0: a
+// index 1: b
+// index 2: c
+// index 3: d
+// index 4: e
+```
+
 #### .map(callback)
 
 .map() creates a new array with the results of the callback function
@@ -609,6 +621,15 @@ arr.forEach(i => console.log(`the number is ${i}`));
 const arr = [1, 2, 3, 4, 5];
 const doubleArr = arr.map(i => i * 2);
 console.log(doubleArr); // [2, 4, 6, 8, 10]
+```
+
+.map() with index
+
+```js
+const arr1 = [1, 2, 3, 4, 5];
+const arr2 = [100, 200, 300, 400, 500];
+const sumArray = arr1.map((val, index) => val + arr2[index]);
+console.log(sumArray); // [101, 202, 303, 404, 505]
 ```
 
 #### .filter(callback)
