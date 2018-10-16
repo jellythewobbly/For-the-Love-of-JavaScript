@@ -29,6 +29,13 @@ const a = 123;
 console.log(a.toString()); // '123'
 ```
 
+Convert decimal to binary using .toString(2)
+
+```js
+const num = 4;
+console.log(num.toString(2)); // '100'
+```
+
 #### .length
 
 ```js
