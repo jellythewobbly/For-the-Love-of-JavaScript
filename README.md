@@ -373,6 +373,32 @@ online && getData();
 
 ## NULL, UNDEFINED
 
+```js
+let a = null;
+let b;
+
+console.log(a); // null
+console.log(b); // undefined
+
+typeof a; // 'object'
+typeof b; // 'undefined'
+
+a === b; // false
+a == b; // true
+```
+
+Constant variables have to be explicitly assigned a value
+
+```js
+const a = null;
+const b = undefined;
+const c; // ERROR: Missing initializer in const declaration
+
+console.log(a); // null
+console.log(b); // undefined
+console.log(c); // ReferenceError: c is not defined
+```
+
 ## ARRAY
 
 #### Array.isArray(input)
@@ -1113,7 +1139,7 @@ console.log(sam.__proto__ === Person.prototype); // true
 
 #### Object.create(proto)
 
-Object.create() creates a new object, setting the argument object as the new object's \_\_proto\_\_
+**Object.create()** creates a new object, setting the argument object as the new object's **\_\_proto\_\_**
 
 ```js
 // this is an object, not a constructor function
@@ -1133,7 +1159,7 @@ james.greeting(); // My name is James. Am I human? Yes
 james.__proto__ === person; // true
 ```
 
-#### Promise & Async/Await
+## Promise & Async/Await
 
 The states of a promise:
 
@@ -1158,7 +1184,7 @@ p.then(result => console.log(result)).catch(err =>
 // Success! (after 2 seconds)
 ```
 
-Async/await
+**Async/await**
 
 ```js
 function databaseQuery2Seconds() {
@@ -1183,7 +1209,91 @@ getUserData();
 // { name: 'Mark', age: 32 }
 ```
 
-### Algorithms?
+## Error handling
+
+#### throw new Error(err)
+
+Creating an instance of the **Error** object
+
+```js
+throw new Error('this is an error');
+
+// In Chrome
+//Uncaught Error: this is an error
+
+// In Node
+// Error: this is an error
+```
+
+#### try...catch
+
+```js
+function includes2(input) {
+	return input.indexOf('2') !== -1;
+}
+
+const num = 12345;
+
+try {
+	includes2(num);
+} catch (err) {
+	console.log(err.name);
+	console.log(err.message);
+}
+
+// TypeError
+// input.indexOf is not a function
+```
+
+**finally** will execute regardless of the **try...catch** block
+
+```js
+try {
+	console.log('hello world!');
+} catch (err) {
+	console.log('Error:', err.message);
+} finally {
+	console.log('finally this runs');
+}
+
+// hello world!
+// finally this runs
+
+try {
+	throw new Error('this is an error');
+} catch (err) {
+	console.log('Error:', err.message);
+} finally {
+	console.log('finally this runs');
+}
+
+// Error: this is an error
+// finally this runs
+```
+
+Finally will execute regardless of any **return** statements in the **try...catch** block
+
+```js
+function errorExample() {
+	try {
+		throw new Error('oh no, an error occurred');
+		return 'try, all is good';
+	} catch (err) {
+		console.log(err.message);
+		return 'catch, something went wrong';
+	} finally {
+		console.log('looks like we are done');
+		return 'finally, this has to execute before the rest of try..catch'
+	}
+}
+
+console.log(errorExample());
+// oh no, an error occurred
+// looks like we are done
+// finally, this has to execute before the rest of try..catch
+```
+
+## Algorithms?
 
 ### TASK: REVERSE A STRING
 
