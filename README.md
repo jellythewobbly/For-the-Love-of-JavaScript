@@ -16,7 +16,7 @@
 
 ### Template literals ``
 
-```js
+```javascript
 const name = 'David';
 const school = 'General Assembly';
 console.log(`Hello my name is ${name} and I am a student at ${school}.`); // "Hello my name is David and I am a student at General Assembly."
@@ -24,21 +24,21 @@ console.log(`Hello my name is ${name} and I am a student at ${school}.`); // "He
 
 ### .toString()
 
-```js
+```javascript
 const a = 123;
 console.log(a.toString()); // '123'
 ```
 
 Convert decimal to binary using .toString(2)
 
-```js
+```javascript
 const num = 4;
 console.log(num.toString(2)); // '100'
 ```
 
 ### .length
 
-```js
+```javascript
 const alphabets = 'abcdefghijklmnopqrstuvwxyz';
 console.log(alphabets.length); // 26
 // indexing a string
@@ -48,14 +48,14 @@ console.log(alphabets[25]); // z
 
 ### String.fromCharCode(input)
 
-```js
+```javascript
 console.log(String.fromCharCode(97)); // a
 console.log(String.fromCharCode(65, 66, 67)); // ABC
 ```
 
 ### .charCodeAt(index)
 
-```js
+```javascript
 console.log('a'.charCodeAt()); // 97
 console.log('HELLO'.charCodeAt()); // 72 (if index is not a number, it defaults to 0)
 console.log('HELLO'.charCodeAt(1)); // 69 (Char code of index 1 - 'E')
@@ -63,14 +63,14 @@ console.log('HELLO'.charCodeAt(1)); // 69 (Char code of index 1 - 'E')
 
 ### .repeat(count)
 
-```js
+```javascript
 const str = 'foobar';
 console.log(str.repeat(3)); // foobarfoobarfoobar
 ```
 
 ### .replace(searchValue, newValue)
 
-```js
+```javascript
 // NOTE: this is commonly used with a regular expression (regex)
 const str = 'hello world';
 console.log(str.replace('hello', 'goodbye')); // goodbye world
@@ -82,7 +82,7 @@ console.log(sentence.replace(/[aeiou]/g, '')); // r vwls mprtnt?
 
 ### .indexOf(searchValue, fromIndex)
 
-```js
+```javascript
 const sentence = 'hello my friend';
 console.log(sentence.indexOf('my')); // 6
 console.log(sentence.indexOf('h')); // 0
@@ -96,7 +96,7 @@ console.log(sentence.indexOf('waddup')); // -1
 
 ### .lastIndexOf(searchValue, fromIndex)
 
-```js
+```javascript
 const sentence = 'hello David, my friend';
 console.log(sentence.lastIndexOf('D')); // 6
 console.log(sentence.indexOf('d')); // 10
@@ -109,7 +109,7 @@ console.log(sentence.lastIndexOf('l', 1)); // -1 (only searching from index 0 to
 
 ### .trim()
 
-```js
+```javascript
 // Removes whitespace from both ends of the string
 const greeting = '   Hello world!   ';
 console.log(greeting.trim()); // Hello world!
@@ -117,7 +117,7 @@ console.log(greeting.trim()); // Hello world!
 
 ### .slice(start, end) similar but not the same as .substring()
 
-```js
+```javascript
 const alphabets = 'abcdefghijklmnopqrstuvwxyz';
 console.log(alphabets.slice()); // abcdefghijklmnopqrstuvwxyz
 console.log(alphabets.slice(3)); // defghijklmnopqrstuvwxyz
@@ -128,7 +128,7 @@ console.log(alphabets.slice(-10, -4)); // qrstuv
 
 ### .split(separator, limit)
 
-```js
+```javascript
 const str = 'hello world';
 console.log(str.split()); // ['hello world']
 console.log(str.split('')); // ['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']
@@ -140,7 +140,7 @@ console.log(str.split('', 4)); // ['h', 'e', 'l', 'l'] (returns the first 4 spli
 
 ### .toLowerCase() .toUpperCase()
 
-```js
+```javascript
 console.log('WADDUP BRO'.toLowerCase()); // waddup bro
 console.log('hello world'.toUpperCase()); // HELLO WORLD
 ```
@@ -149,7 +149,7 @@ console.log('hello world'.toUpperCase()); // HELLO WORLD
 
 Returns an array of strings that match the regular expression
 
-```js
+```javascript
 const randomString =
 	'the123quick456brown789fox!@#jumped$%^over&*(the)_+lazy{}|dog';
 const onlyWords = randomString.match(/[a-z]+/g);
@@ -162,7 +162,7 @@ console.log(onlyWords.join(' ')); // 'the quick brown fox jumped over the lazy d
 
 ### Shorthand operators
 
-```js
+```javascript
 let a = 12; // let instead of const as they will not work with const
 
 a += 3; // 15
@@ -180,13 +180,13 @@ a /= 3; // 4
 
 ### Comparing i++ vs ++i
 
-```js
+```javascript
 let i = 1; // let instead of const as they will not work with const
 console.log(i++); // 1
 console.log(i); // 2
 ```
 
-```js
+```javascript
 let i = 1; // let instead of const as they will not work with const
 console.log(++i); // 2
 console.log(i); // 2
@@ -196,7 +196,7 @@ console.log(i); // 2
 
 Returns a string representation of the number rounded to n decimal places
 
-```js
+```javascript
 (12345.6789).toFixed(3); // "12345.679"
 ```
 
@@ -204,7 +204,7 @@ Returns a string representation of the number rounded to n decimal places
 
 Returns a string representation of the number rounded to n digits
 
-```js
+```javascript
 (12345.6789).toPrecision(6); // "12345.7"
 ```
 
@@ -212,7 +212,7 @@ Returns a string representation of the number rounded to n digits
 
 Due to the double-precision floating-point format, using a number LARGER THAN 9007199254740991 may result in loss of precision
 
-```js
+```javascript
 const x = Number.MAX_SAFE_INTEGER + 1;
 const y = Number.MAX_SAFE_INTEGER + 2;
 console.log(x === y); // true
@@ -222,7 +222,7 @@ console.log(x === y); // true
 
 Due to the double-precision floating-point format, using a number SMALLER THAN -9007199254740991 may result in loss of precision
 
-```js
+```javascript
 const x = Number.MIN_SAFE_INTEGER - 1;
 const y = Number.MIN_SAFE_INTEGER - 2;
 console.log(x === y); // true
@@ -232,7 +232,7 @@ console.log(x === y); // true
 
 Not going into detail as these are pretty self explanatory
 
-```js
+```javascript
 Math.random(); // returns a floating point number between 0 to 1 (inclusive of 0, but not 1)
 
 Math.floor(input); // returns the largest integer less than or equal to a given number
@@ -255,7 +255,7 @@ Javascript will attempt to coerce an unexpected value type to the expected type
 
 Does not work with addition as it leads to concatenation
 
-```js
+```javascript
 console.log('6' + '9'); // '69' (string)
 console.log('10' - '7'); // 3 (number)
 console.log('3' * '3'); // 9 (number)
@@ -268,7 +268,7 @@ NaN is a special value, it is never equal to another NaN value
 
 Comparing/equating anything with NaN will result in false
 
-```js
+```javascript
 console.log(NaN == NaN); // false
 console.log('hello' == NaN); // false
 console.log(['this', 'is', 'an', 'array'] == NaN); // false
@@ -281,7 +281,7 @@ console.log(NaN != NaN); // true
 
 To test for NaN, use isNaN()
 
-```js
+```javascript
 console.log(isNaN('hello')); // true
 console.log(isNaN(['this', 'is', 'an', 'array'])); // true
 console.log(isNaN({ name: 'ben', age: 20 })); // true
@@ -310,7 +310,7 @@ console.log(isNaN({ name: 'ben', age: 20 })); // true
 
 ### while loop using the concept of truthy/falsy
 
-```js
+```javascript
 const arr = [1, 2, 3, 4, 5];
 // no need to compare using while(arr.length != 0)
 while (arr.length) {
@@ -335,7 +335,7 @@ if left is truthy, left will be returned
 
 if left is falsy, right will be returned
 
-```js
+```javascript
 const people = [
 	{ name: 'jerry', occupation: 'teacher' },
 	{ name: 'sandra', occupation: 'dentist' },
@@ -356,7 +356,7 @@ if left is truthy, right will be returned
 
 if left is falsy, left will be returned
 
-```js
+```javascript
 let online = true;
 
 const getData = () => {
@@ -374,7 +374,7 @@ online && getData();
 
 ## NULL, UNDEFINED
 
-```js
+```javascript
 let a = null;
 let b;
 
@@ -390,7 +390,7 @@ a == b; // true
 
 Constant variables have to be explicitly assigned a value
 
-```js
+```javascript
 const a = null;
 const b = undefined;
 const c; // ERROR: Missing initializer in const declaration
@@ -404,7 +404,7 @@ console.log(c); // ReferenceError: c is not defined
 
 ### Array.isArray(input)
 
-```js
+```javascript
 Array.isArray([1, 2, 3]); // true
 Array.isArray({ foo: 123 }); // false
 Array.isArray('foobar'); // false
@@ -413,14 +413,14 @@ Array.isArray(undefined); // false
 
 ### .length
 
-```js
+```javascript
 const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
 console.log(arr.length); // 5
 ```
 
 ### .indexOf(searchValue, fromIndex)
 
-```js
+```javascript
 const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
 console.log(arr.indexOf('charlie')); // 2
 console.log(arr.indexOf('hello world')); // -1 (not found)
@@ -432,7 +432,7 @@ Returns the index of the first element that satisfies the condition
 
 .findIndex() is essentially .indexOf() but with a search condition instead of a search value
 
-```js
+```javascript
 const arr = [5, 12, 8, 130, 44];
 console.log(arr.findIndex(element => element > 20)); // 3
 ```
@@ -441,14 +441,14 @@ console.log(arr.findIndex(element => element > 20)); // 3
 
 Returns the value of the first element that satisfies the condition. Otherwise undefined is returned.
 
-```js
+```javascript
 const arr = ['blue', 'red', 'green', 'purple', 'pink', 'yellow'];
 console.log(arr.find(color => color.length > 5)); // purple
 ```
 
 ### .includes(searchValue)
 
-```js
+```javascript
 const arr = ['blue', 'red', 'green', 'purple', 'pink', 'yellow'];
 console.log(arr.includes('red')); // true
 console.log(arr.includes('rainbow')); // false
@@ -462,7 +462,7 @@ console.log(arr.indexOf('rainbow') !== -1); // false
 
 Returns true if all elements in the array pass the condition
 
-```js
+```javascript
 const numbers = [1, 2, 3, 4, 5];
 const allGreaterThanZero = numbers.every(i => i > 0);
 console.log(allGreaterThanZero); // true
@@ -484,7 +484,7 @@ console.log(allNumbers); // false
 
 Returns true if at least one element in the array passes the condition
 
-```js
+```javascript
 // breaks out of the function once a true value has been found
 const names = ['alex', 'ben', 'charlie', 'david', 'ethan'];
 const anyLongerThanFive = names.some(i => {
@@ -499,7 +499,7 @@ console.log(anyLongerThanFive); // true
 
 ### .sort(optionalCompareFunction)
 
-```js
+```javascript
 // .sort() modifies the original array
 const months = ['March', 'January', 'February', 'December'];
 months.sort();
@@ -511,7 +511,7 @@ months.sort((a, b) => a.length - b.length);
 console.log(months); // ['May', 'March', 'April', 'January', 'February', 'December']
 ```
 
-```js
+```javascript
 const numbers = [1, 30, 4, 21, 101];
 numbers.sort();
 console.log(numbers); // [1, 101, 21, 30, 4]
@@ -529,7 +529,7 @@ console.log(numbers); // [101, 30, 21, 4, 1]
 
 ### .reverse()
 
-```js
+```javascript
 // .reverse() modifies the original array
 const arr = ['one', 'two', 'three', 'four', 'five'];
 arr.reverse();
@@ -540,7 +540,7 @@ console.log(arr); // ['five', 'four', 'three', 'two', 'one']
 
 Adds one or more elements to the END of the array, it returns the new length of the array
 
-```js
+```javascript
 const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
 const arrLength = arr.push('felix', 'gerald');
 console.log(arr); // ['alex', 'ben', 'charlie', 'david', 'ethan', 'felix', 'gerald']
@@ -551,7 +551,7 @@ console.log(arrLength); // 7
 
 Adds one or more elements to the START of an array, it returns the new length of the array
 
-```js
+```javascript
 const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
 const arrLength = arr.unshift('adam', 'alan');
 console.log(arr); // ['adam', 'alan', 'alex', 'ben', 'charlie', 'david', 'ethan']
@@ -562,7 +562,7 @@ console.log(arrLength); // 7
 
 Removes the LAST element from an array, it returns the element that was removed
 
-```js
+```javascript
 const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
 const popValue = arr.pop();
 console.log(arr); // ['alex', 'ben', 'charlie', 'david']
@@ -573,7 +573,7 @@ console.log(popValue); // 'ethan'
 
 Removes the FIRST element from an array and returns the element that was removed
 
-```js
+```javascript
 const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
 const shiftValue = arr.shift();
 console.log(arr); // ['ben', 'charlie', 'david', 'ethan']
@@ -582,7 +582,7 @@ console.log(shiftValue); // 'alex'
 
 ### .slice(fromIndex)
 
-```js
+```javascript
 // .slice() does not modify the original array
 const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
 console.log(arr.slice()); // shallow copy of arr
@@ -596,7 +596,7 @@ console.log(arr.slice(-2)); // ['david', 'ethan']
 
 Returns an array containing the deleted element(s) or an empty array
 
-```js
+```javascript
 // .splice() modifies the original array
 
 // insert values into an array
@@ -625,7 +625,7 @@ console.log(arr); // ['alex', 'ben', 'charlie', 'daniel', 'ethan']
 
 .forEach() executes the callback function once for each array element
 
-```js
+```javascript
 const arr = [1, 2, 3, 4, 5];
 arr.forEach(i => console.log(`the number is ${i}`));
 // the number is 1
@@ -637,7 +637,7 @@ arr.forEach(i => console.log(`the number is ${i}`));
 
 .forEach() with index
 
-```js
+```javascript
 const arr = ['a', 'b', 'c', 'd', 'e'];
 arr.forEach((value, index) => console.log(`index ${index}: ${value}`));
 // index 0: a
@@ -651,7 +651,7 @@ arr.forEach((value, index) => console.log(`index ${index}: ${value}`));
 
 .map() creates a new array with the results of the callback function
 
-```js
+```javascript
 const arr = [1, 2, 3, 4, 5];
 const doubleArr = arr.map(i => i * 2);
 console.log(doubleArr); // [2, 4, 6, 8, 10]
@@ -659,7 +659,7 @@ console.log(doubleArr); // [2, 4, 6, 8, 10]
 
 .map() with index
 
-```js
+```javascript
 const arr1 = [1, 2, 3, 4, 5];
 const arr2 = [100, 200, 300, 400, 500];
 const sumArray = arr1.map((val, index) => val + arr2[index]);
@@ -670,13 +670,13 @@ console.log(sumArray); // [101, 202, 303, 404, 505]
 
 .filter() creates a new array with all elements that pass the test in the callback function
 
-```js
+```javascript
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const moreThanFive = arr.filter(i => i > 5);
 console.log(moreThanFive); // [6, 7, 8, 9, 10]
 ```
 
-```js
+```javascript
 const stuff = ['foo', 'bar', 'MacBook', 'this is a long string'];
 const longWords = stuff.filter(i => i.length > 5);
 console.log(longWords); // ['MacBook', 'this is a long string']
@@ -686,13 +686,13 @@ console.log(longWords); // ['MacBook', 'this is a long string']
 
 .reduce() executes a reducer callback function on each member of the array, returns a single output value. The initialValue is optional.
 
-```js
+```javascript
 const numbers = [1, 2, 3, 4, 5];
 const total = numbers.reduce((total, current) => total + current);
 console.log(total); // 15
 ```
 
-```js
+```javascript
 // with initial value
 function addTen(arr) {
 	return arr.reduce((acc, cur) => acc + cur, 10);
@@ -702,7 +702,7 @@ const numbers = [1, 3, 5];
 console.log(addTen(numbers)); // 19
 ```
 
-```js
+```javascript
 // example use case for counting occurrence instead of using a for of loop
 const numbers = [1, 2, 3, 4, 5, 6, 1, 1, 1];
 const count = (array, searchValue) => {
@@ -717,7 +717,7 @@ const count = (array, searchValue) => {
 console.log(count(numbers, 1)); // 4
 ```
 
-```js
+```javascript
 // return the largest value in an array without using Math.max
 const numbers = [1, 3, 5, 7, 9, 8, 6, 4, 2, 1];
 const maxValue = arr => {
@@ -741,7 +741,7 @@ console.log(minValue(numbers)); // 1
 
 Use for...of to iterate over iterable objects such as strings and arrays
 
-```js
+```javascript
 const arr = [1, 2, 3, 4, 5];
 let total = 0;
 for (let number of arr) {
@@ -756,7 +756,7 @@ console.log(total); // 15
 
 Easiest way to create an object by using the object literal syntax
 
-```js
+```javascript
 const obj = {
 	key1: 'value1',
 	key2: 'value2',
@@ -789,7 +789,7 @@ console.log(obj);
 
 ### Factory function
 
-```js
+```javascript
 // return keyword has to be used with factory function
 // note that there is no need for name: name, gender: gender
 // get keyword used to define a getter (access an object's method like a property)
@@ -812,7 +812,7 @@ console.log(peter.age); // 23 (AS OF 2018)
 
 ### Constructor function
 
-```js
+```javascript
 // new keyword has to be used with constructor function
 // note uppercase first letter (Pascal case) used for constructor function
 function Person(name, gender, yearOfBirth) {
@@ -832,7 +832,7 @@ console.log(alex.age); // 18 (AS OF 2018)
 
 Use for...in to iterate over an object
 
-```js
+```javascript
 // for...in returns the object's own instance properties/methods and also those from the prototype
 const book = {
 	title: 'JavaScript: The Definitive Guide',
@@ -852,7 +852,7 @@ for (let key in book) {
 
 Returns an array of the object's keys
 
-```js
+```javascript
 // returns only the object's own instance properties/methods
 const person = {
 	name: 'mary',
@@ -865,7 +865,7 @@ console.log(Object.keys(person)); // ['name', 'age']
 
 Returns an array of the object's values
 
-```js
+```javascript
 const person = {
 	name: 'mary',
 	age: 32,
@@ -877,7 +877,7 @@ console.log(Object.values(person)); // ['mary', 32]
 
 Returns an array of the object's own enumerable property [key, value] pairs
 
-```js
+```javascript
 const person = {
 	name: 'mary',
 	age: 32,
@@ -889,7 +889,7 @@ console.log(Object.entries(person)); // [['name', 'mary'], ['age', 32]]
 
 Returns true if the property is in the object or its prototype chain
 
-```js
+```javascript
 const person = {
 	name: 'mary',
 	age: 32,
@@ -903,7 +903,7 @@ if ('name' in person) console.log(`person has a name ${person.name}`);
 
 Returns true if the object has the specified property as its own property (not inherited)
 
-```js
+```javascript
 function Animal(name, species) {
 	this.name = name;
 	this.species = species;
@@ -930,7 +930,7 @@ With the descriptor, we can modify the way the property behaves
 
 By default, the properties added are immutable and not enumerable
 
-```js
+```javascript
 const exampleObject = { hello: 'world' };
 Object.defineProperty(exampleObject, 'exampleKey', {
 	value: 'exampleValue',
@@ -954,7 +954,7 @@ console.log(exampleObject);
 
 Create a shallow copy by using an empty object as the target
 
-```js
+```javascript
 const object1 = { a: 1, b: 2, c: 3 };
 const clone = Object.assign({}, object1);
 
@@ -964,7 +964,7 @@ console.log(object1 === clone); // false (object1 and clone are 2 different obje
 
 Use Object.assign() to merge objects
 
-```js
+```javascript
 const obj1 = { a: 1 };
 const obj2 = { b: 2 };
 const obj3 = { c: 3 };
@@ -977,7 +977,7 @@ console.log(newObj === obj1); // true
 
 Alternative using the spread operator (reassign a new object)
 
-```js
+```javascript
 let obj1 = { a: 1 };
 const obj2 = { b: 2 };
 const obj3 = { c: 3 };
@@ -995,7 +995,7 @@ If strict mode is enabled, "this" that returns window in browser/global in node 
 
 ES6 arrow functions do not rebind the "this" keyword
 
-```js
+```javascript
 const person = {
 	name: 'george',
 	getThis() {
@@ -1026,7 +1026,7 @@ These 3 methods all involve the use of the "this" keyword
 
 .bind(thisArg)
 
-```js
+```javascript
 const person = {
 	name: 'george',
 	getThis() {
@@ -1045,7 +1045,7 @@ console.log(person.getDeepThis()); // person object
 
 .call(thisArg, ...arguments)
 
-```js
+```javascript
 function printer(greeting) {
 	console.log(`${greeting}, this is ${this.name}`);
 }
@@ -1063,7 +1063,7 @@ printer.call(object2, 'Hi there'); // Hi there, this is object2
 
 .apply(thisArg, [arguments array])
 
-```js
+```javascript
 function printer(...numbers) {
 	console.log(`In ${this.name}, we have ${numbers}`);
 }
@@ -1079,7 +1079,7 @@ printer.apply(object1, [100, 99, 98, 97, 96, 95]); // In object1, we have 100,99
 
 ES6 Classes are syntactic sugar over constructor functions
 
-```js
+```javascript
 class Person {
 	constructor(name, gender, yearOfBirth) {
 		this.name = name;
@@ -1091,7 +1091,7 @@ class Person {
 
 ### prototypes
 
-```js
+```javascript
 // all objects inherit properties and methods from a prototype, you can think of prototypes as the parent
 function Person(name, gender, yearOfBirth) {
 	this.location = 'Singapore';
@@ -1106,7 +1106,7 @@ console.log(Object.getPrototypeOf(jack)); // returns the prototype of Person
 console.log(jack.constructor); // returns the Person function
 ```
 
-```js
+```javascript
 // modifying the example above, adding methods to the Person prototype
 function Person(name, gender, yearOfBirth) {
 	this.name = name;
@@ -1126,7 +1126,7 @@ sam.walk(); // sam is walking...
 console.log(sam.getAge()); // 20 (AS OF 2018)
 ```
 
-```js
+```javascript
 // comparing the prototypes of objects, continuing from the example above
 const sam = new Person('sam', 'female', 1998);
 const daniel = new Person('daniel', 'male', 1950);
@@ -1142,7 +1142,7 @@ console.log(sam.__proto__ === Person.prototype); // true
 
 **Object.create()** creates a new object, setting the argument object as the new object's **\_\_proto\_\_**
 
-```js
+```javascript
 // this is an object, not a constructor function
 const person = {
 	isHuman: true,
@@ -1170,7 +1170,7 @@ resolved/fulfilled: the operation completed successfully.
 
 rejected: the operation failed.
 
-```js
+```javascript
 const p = new Promise((resolve, reject) => {
 	// perform async operation here
 	setTimeout(() => {
@@ -1187,7 +1187,7 @@ p.then(result => console.log(result)).catch(err =>
 
 **Async/await**
 
-```js
+```javascript
 function databaseQuery2Seconds() {
 	return new Promise(resolve => {
 		setTimeout(() => {
@@ -1216,7 +1216,7 @@ getUserData();
 
 Creating an instance of the **Error** object
 
-```js
+```javascript
 throw new Error('this is an error');
 
 // In Chrome
@@ -1228,7 +1228,7 @@ throw new Error('this is an error');
 
 ### try...catch
 
-```js
+```javascript
 function includes2(input) {
 	return input.indexOf('2') !== -1;
 }
@@ -1248,7 +1248,7 @@ try {
 
 **finally** will execute regardless of the **try...catch** block
 
-```js
+```javascript
 try {
 	console.log('hello world!');
 } catch (err) {
@@ -1274,7 +1274,7 @@ try {
 
 Finally will execute regardless of any **return** statements in the **try...catch** block
 
-```js
+```javascript
 function errorExample() {
 	try {
 		throw new Error('oh no, an error occurred');
@@ -1298,7 +1298,7 @@ console.log(errorExample());
 
 ### TASK: REVERSE A STRING
 
-```js
+```javascript
 const alphabets = 'abcdefg';
 const reverser = input =>
 	input
@@ -1311,7 +1311,7 @@ console.log(reverser(alphabets)); // gfedcba
 
 ### TASK: CAPITALISE A STRING
 
-```js
+```javascript
 const str = 'foobar';
 const caps = input => input[0].toUpperCase() + input.slice(1);
 console.log(caps(str)); // Foobar
@@ -1329,13 +1329,13 @@ console.log(up(sentence)); // This Is A Sentence
 
 ### TASK: REMOVE DUPLICATE VALUES IN AN ARRAY
 
-```js
+```javascript
 const arr = [1, 1, 2, 2, 2, 3, 3, 4, 4, 4, 5, 5, 6, 6, 7, 7, 8, 9, 0];
 ```
 
 ### USING FOR LOOP
 
-```js
+```javascript
 const removeDuplicates = input => {
 	const res = [];
 	for (let i = 0; i < input.length; i++) {
@@ -1351,20 +1351,20 @@ console.log(removeDuplicates(arr)); // [1,2,3,4,5,6,7,8,9,0]
 
 The Set object lets you store unique values of any type, whether primitive values or object references.
 
-```js
+```javascript
 const removeDuplicatesSet = input => [...new Set(input)];
 console.log(removeDuplicatesSet(arr)); // [1,2,3,4,5,6,7,8,9,0]
 ```
 
 ### TASK: RETURN UNIQUE VALUES IN AN ARRAY
 
-```js
+```javascript
 arr = [1, 1, 2, 2, 2, 3, 3, 4, 4, 4, 5, 5, 6, 7, 8, 9, 0];
 ```
 
 ### USING ARRAY.filter
 
-```js
+```javascript
 const findUnique = input => {
 	return input.filter(i => input.indexOf(i) == input.lastIndexOf(i));
 };
