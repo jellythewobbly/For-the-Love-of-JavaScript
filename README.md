@@ -14,7 +14,7 @@
 
 ## STRING
 
-#### Template literals ``
+### Template literals ``
 
 ```js
 const name = 'David';
@@ -22,7 +22,7 @@ const school = 'General Assembly';
 console.log(`Hello my name is ${name} and I am a student at ${school}.`); // "Hello my name is David and I am a student at General Assembly."
 ```
 
-#### .toString()
+### .toString()
 
 ```js
 const a = 123;
@@ -36,7 +36,7 @@ const num = 4;
 console.log(num.toString(2)); // '100'
 ```
 
-#### .length
+### .length
 
 ```js
 const alphabets = 'abcdefghijklmnopqrstuvwxyz';
@@ -46,14 +46,14 @@ console.log(alphabets[0]); // a
 console.log(alphabets[25]); // z
 ```
 
-#### String.fromCharCode(input)
+### String.fromCharCode(input)
 
 ```js
 console.log(String.fromCharCode(97)); // a
 console.log(String.fromCharCode(65, 66, 67)); // ABC
 ```
 
-#### .charCodeAt(index)
+### .charCodeAt(index)
 
 ```js
 console.log('a'.charCodeAt()); // 97
@@ -61,14 +61,14 @@ console.log('HELLO'.charCodeAt()); // 72 (if index is not a number, it defaults 
 console.log('HELLO'.charCodeAt(1)); // 69 (Char code of index 1 - 'E')
 ```
 
-#### .repeat(count)
+### .repeat(count)
 
 ```js
 const str = 'foobar';
 console.log(str.repeat(3)); // foobarfoobarfoobar
 ```
 
-#### .replace(searchValue, newValue)
+### .replace(searchValue, newValue)
 
 ```js
 // NOTE: this is commonly used with a regular expression (regex)
@@ -80,7 +80,7 @@ const sentence = 'are vowels important?';
 console.log(sentence.replace(/[aeiou]/g, '')); // r vwls mprtnt?
 ```
 
-#### .indexOf(searchValue, fromIndex)
+### .indexOf(searchValue, fromIndex)
 
 ```js
 const sentence = 'hello my friend';
@@ -94,7 +94,7 @@ console.log(sentence.indexOf('e', first + 1)); // 12 (use this to find the next 
 console.log(sentence.indexOf('waddup')); // -1
 ```
 
-#### .lastIndexOf(searchValue, fromIndex)
+### .lastIndexOf(searchValue, fromIndex)
 
 ```js
 const sentence = 'hello David, my friend';
@@ -107,7 +107,7 @@ console.log(sentence.lastIndexOf('l', 2)); // 2 (only searching from index 0 to 
 console.log(sentence.lastIndexOf('l', 1)); // -1 (only searching from index 0 to index 1 of the string - 'he')
 ```
 
-#### .trim()
+### .trim()
 
 ```js
 // Removes whitespace from both ends of the string
@@ -115,7 +115,7 @@ const greeting = '   Hello world!   ';
 console.log(greeting.trim()); // Hello world!
 ```
 
-#### .slice(start, end) similar but not the same as .substring()
+### .slice(start, end) similar but not the same as .substring()
 
 ```js
 const alphabets = 'abcdefghijklmnopqrstuvwxyz';
@@ -126,7 +126,7 @@ console.log(alphabets.slice(-3)); // xyz (counting from the end of the string)
 console.log(alphabets.slice(-10, -4)); // qrstuv
 ```
 
-#### .split(separator, limit)
+### .split(separator, limit)
 
 ```js
 const str = 'hello world';
@@ -138,14 +138,14 @@ console.log(str.split('l')); // ['he', '', 'o wor', 'd']
 console.log(str.split('', 4)); // ['h', 'e', 'l', 'l'] (returns the first 4 splits)
 ```
 
-#### .toLowerCase() .toUpperCase()
+### .toLowerCase() .toUpperCase()
 
 ```js
 console.log('WADDUP BRO'.toLowerCase()); // waddup bro
 console.log('hello world'.toUpperCase()); // HELLO WORLD
 ```
 
-#### .match(regularExpression)
+### .match(regularExpression)
 
 Returns an array of strings that match the regular expression
 
@@ -160,7 +160,7 @@ console.log(onlyWords.join(' ')); // 'the quick brown fox jumped over the lazy d
 
 ## NUMBER
 
-#### Shorthand operators
+### Shorthand operators
 
 ```js
 let a = 12; // let instead of const as they will not work with const
@@ -178,7 +178,7 @@ a /= 3; // 4
 // a = a / 3
 ```
 
-#### Comparing i++ vs ++i
+### Comparing i++ vs ++i
 
 ```js
 let i = 1; // let instead of const as they will not work with const
@@ -192,7 +192,7 @@ console.log(++i); // 2
 console.log(i); // 2
 ```
 
-#### Number.toFixed(n)
+### Number.toFixed(n)
 
 Returns a string representation of the number rounded to n decimal places
 
@@ -200,7 +200,7 @@ Returns a string representation of the number rounded to n decimal places
 (12345.6789).toFixed(3); // "12345.679"
 ```
 
-#### Number.toPrecision(n)
+### Number.toPrecision(n)
 
 Returns a string representation of the number rounded to n digits
 
@@ -208,7 +208,7 @@ Returns a string representation of the number rounded to n digits
 (12345.6789).toPrecision(6); // "12345.7"
 ```
 
-#### Number.MAX_SAFE_INTEGER
+### Number.MAX_SAFE_INTEGER
 
 Due to the double-precision floating-point format, using a number LARGER THAN 9007199254740991 may result in loss of precision
 
@@ -218,7 +218,7 @@ const y = Number.MAX_SAFE_INTEGER + 2;
 console.log(x === y); // true
 ```
 
-#### Number.MIN_SAFE_INTEGER
+### Number.MIN_SAFE_INTEGER
 
 Due to the double-precision floating-point format, using a number SMALLER THAN -9007199254740991 may result in loss of precision
 
@@ -228,7 +228,7 @@ const y = Number.MIN_SAFE_INTEGER - 2;
 console.log(x === y); // true
 ```
 
-#### MATH
+### MATH
 
 Not going into detail as these are pretty self explanatory
 
@@ -241,6 +241,7 @@ Math.ceil(input); // returns the smallest integer greater than or equal to a giv
 Math.trunc(input); // returns the integer part of a number by removing the decimals
 Math.round(input); // returns the value of a number rounded to the nearest integer
 
+// 4 ** 2 = 16 use this instead (ES6)
 Math.pow(base, exponent); // returns the base raised to the exponent e.g. Math.pow(4, 2) = 16
 Math.sqrt(input); // returns the square root of a number
 Math.cbrt(input); // returns the cube root of a number
@@ -248,7 +249,7 @@ Math.cbrt(input); // returns the cube root of a number
 Math.PI; // returns 3.141592653589793
 ```
 
-#### Implicit coercion
+### Implicit coercion
 
 Javascript will attempt to coerce an unexpected value type to the expected type
 
@@ -261,7 +262,7 @@ console.log('3' * '3'); // 9 (number)
 console.log('10' / '2'); // 5 (number)
 ```
 
-#### NaN
+### NaN
 
 NaN is a special value, it is never equal to another NaN value
 
@@ -276,7 +277,7 @@ console.log({ name: 'ben', age: 20 } == NaN); // false
 console.log(NaN != NaN); // true
 ```
 
-#### isNaN(input)
+### isNaN(input)
 
 To test for NaN, use isNaN()
 
@@ -288,7 +289,7 @@ console.log(isNaN({ name: 'ben', age: 20 })); // true
 
 ## BOOLEAN
 
-#### falsy values
+### falsy values
 
 1. false
 2. undefined
@@ -297,7 +298,7 @@ console.log(isNaN({ name: 'ben', age: 20 })); // true
 5. ''
 6. NaN
 
-#### truthy values (Everything that isn't falsy is truthy)
+### truthy values (Everything that isn't falsy is truthy)
 
 1. true
 2. {} (empty object)
@@ -307,7 +308,7 @@ console.log(isNaN({ name: 'ben', age: 20 })); // true
 6. 1
 7. 'hello'
 
-#### while loop using the concept of truthy/falsy
+### while loop using the concept of truthy/falsy
 
 ```js
 const arr = [1, 2, 3, 4, 5];
@@ -324,7 +325,7 @@ while (arr.length) {
 console.log(arr); // []
 ```
 
-#### short circuit evaluation
+### short circuit evaluation
 
 Both || and && evaluate from left to right
 
@@ -401,7 +402,7 @@ console.log(c); // ReferenceError: c is not defined
 
 ## ARRAY
 
-#### Array.isArray(input)
+### Array.isArray(input)
 
 ```js
 Array.isArray([1, 2, 3]); // true
@@ -410,14 +411,14 @@ Array.isArray('foobar'); // false
 Array.isArray(undefined); // false
 ```
 
-#### .length
+### .length
 
 ```js
 const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
 console.log(arr.length); // 5
 ```
 
-#### .indexOf(searchValue, fromIndex)
+### .indexOf(searchValue, fromIndex)
 
 ```js
 const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
@@ -425,7 +426,7 @@ console.log(arr.indexOf('charlie')); // 2
 console.log(arr.indexOf('hello world')); // -1 (not found)
 ```
 
-#### .findIndex(callback)
+### .findIndex(callback)
 
 Returns the index of the first element that satisfies the condition
 
@@ -436,7 +437,7 @@ const arr = [5, 12, 8, 130, 44];
 console.log(arr.findIndex(element => element > 20)); // 3
 ```
 
-#### .find(callback)
+### .find(callback)
 
 Returns the value of the first element that satisfies the condition. Otherwise undefined is returned.
 
@@ -445,7 +446,7 @@ const arr = ['blue', 'red', 'green', 'purple', 'pink', 'yellow'];
 console.log(arr.find(color => color.length > 5)); // purple
 ```
 
-#### .includes(searchValue)
+### .includes(searchValue)
 
 ```js
 const arr = ['blue', 'red', 'green', 'purple', 'pink', 'yellow'];
@@ -457,7 +458,7 @@ console.log(arr.indexOf('red') !== -1); // true
 console.log(arr.indexOf('rainbow') !== -1); // false
 ```
 
-#### .every(callback)
+### .every(callback)
 
 Returns true if all elements in the array pass the condition
 
@@ -479,7 +480,7 @@ const allNumbers = arr.every(i => {
 console.log(allNumbers); // false
 ```
 
-#### .some(callback)
+### .some(callback)
 
 Returns true if at least one element in the array passes the condition
 
@@ -496,7 +497,7 @@ const anyLongerThanFive = names.some(i => {
 console.log(anyLongerThanFive); // true
 ```
 
-#### .sort(optionalCompareFunction)
+### .sort(optionalCompareFunction)
 
 ```js
 // .sort() modifies the original array
@@ -526,7 +527,7 @@ numbers.sort((a, b) => b - a);
 console.log(numbers); // [101, 30, 21, 4, 1]
 ```
 
-#### .reverse()
+### .reverse()
 
 ```js
 // .reverse() modifies the original array
@@ -535,7 +536,7 @@ arr.reverse();
 console.log(arr); // ['five', 'four', 'three', 'two', 'one']
 ```
 
-#### .push(values)
+### .push(values)
 
 Adds one or more elements to the END of the array, it returns the new length of the array
 
@@ -546,7 +547,7 @@ console.log(arr); // ['alex', 'ben', 'charlie', 'david', 'ethan', 'felix', 'gera
 console.log(arrLength); // 7
 ```
 
-#### .unshift(values)
+### .unshift(values)
 
 Adds one or more elements to the START of an array, it returns the new length of the array
 
@@ -557,7 +558,7 @@ console.log(arr); // ['adam', 'alan', 'alex', 'ben', 'charlie', 'david', 'ethan'
 console.log(arrLength); // 7
 ```
 
-#### .pop()
+### .pop()
 
 Removes the LAST element from an array, it returns the element that was removed
 
@@ -568,7 +569,7 @@ console.log(arr); // ['alex', 'ben', 'charlie', 'david']
 console.log(popValue); // 'ethan'
 ```
 
-#### .shift()
+### .shift()
 
 Removes the FIRST element from an array and returns the element that was removed
 
@@ -579,7 +580,7 @@ console.log(arr); // ['ben', 'charlie', 'david', 'ethan']
 console.log(shiftValue); // 'alex'
 ```
 
-#### .slice(fromIndex)
+### .slice(fromIndex)
 
 ```js
 // .slice() does not modify the original array
@@ -591,7 +592,7 @@ console.log(arr.slice(2, 4)); // ['charlie', 'david']
 console.log(arr.slice(-2)); // ['david', 'ethan']
 ```
 
-#### .splice(startIndex, deleteCount, insertValues)
+### .splice(startIndex, deleteCount, insertValues)
 
 Returns an array containing the deleted element(s) or an empty array
 
@@ -620,7 +621,7 @@ arr.splice(3, 1, 'daniel');
 console.log(arr); // ['alex', 'ben', 'charlie', 'daniel', 'ethan']
 ```
 
-#### .forEach(callback)
+### .forEach(callback)
 
 .forEach() executes the callback function once for each array element
 
@@ -646,7 +647,7 @@ arr.forEach((value, index) => console.log(`index ${index}: ${value}`));
 // index 4: e
 ```
 
-#### .map(callback)
+### .map(callback)
 
 .map() creates a new array with the results of the callback function
 
@@ -665,7 +666,7 @@ const sumArray = arr1.map((val, index) => val + arr2[index]);
 console.log(sumArray); // [101, 202, 303, 404, 505]
 ```
 
-#### .filter(callback)
+### .filter(callback)
 
 .filter() creates a new array with all elements that pass the test in the callback function
 
@@ -681,7 +682,7 @@ const longWords = stuff.filter(i => i.length > 5);
 console.log(longWords); // ['MacBook', 'this is a long string']
 ```
 
-#### .reduce(callback, initialValue)
+### .reduce(callback, initialValue)
 
 .reduce() executes a reducer callback function on each member of the array, returns a single output value. The initialValue is optional.
 
@@ -736,7 +737,7 @@ const minValue = arr => {
 console.log(minValue(numbers)); // 1
 ```
 
-#### for...of
+### for...of
 
 Use for...of to iterate over iterable objects such as strings and arrays
 
@@ -751,7 +752,7 @@ console.log(total); // 15
 
 ## OBJECT
 
-#### Object literal
+### Object literal
 
 Easiest way to create an object by using the object literal syntax
 
@@ -786,7 +787,7 @@ console.log(obj);
 // { key1: 'value1', key2: 'value2', key3: 'value3' }
 ```
 
-#### Factory function
+### Factory function
 
 ```js
 // return keyword has to be used with factory function
@@ -809,7 +810,7 @@ console.log(peter.name); // peter
 console.log(peter.age); // 23 (AS OF 2018)
 ```
 
-#### Constructor function
+### Constructor function
 
 ```js
 // new keyword has to be used with constructor function
@@ -827,7 +828,7 @@ console.log(alex.name); // alex
 console.log(alex.age); // 18 (AS OF 2018)
 ```
 
-#### for...in
+### for...in
 
 Use for...in to iterate over an object
 
@@ -847,7 +848,7 @@ for (let key in book) {
 // publisher is O'Reilly Media
 ```
 
-#### Object.keys(obj)
+### Object.keys(obj)
 
 Returns an array of the object's keys
 
@@ -860,7 +861,7 @@ const person = {
 console.log(Object.keys(person)); // ['name', 'age']
 ```
 
-#### Object.values(obj)
+### Object.values(obj)
 
 Returns an array of the object's values
 
@@ -872,7 +873,7 @@ const person = {
 console.log(Object.values(person)); // ['mary', 32]
 ```
 
-#### Object.entries(obj)
+### Object.entries(obj)
 
 Returns an array of the object's own enumerable property [key, value] pairs
 
@@ -884,7 +885,7 @@ const person = {
 console.log(Object.entries(person)); // [['name', 'mary'], ['age', 32]]
 ```
 
-#### in operator
+### in operator
 
 Returns true if the property is in the object or its prototype chain
 
@@ -898,7 +899,7 @@ if ('name' in person) console.log(`person has a name ${person.name}`);
 // person has a name mary
 ```
 
-#### .hasOwnProperty(property)
+### .hasOwnProperty(property)
 
 Returns true if the object has the specified property as its own property (not inherited)
 
@@ -923,7 +924,7 @@ console.log(cooper.hasOwnProperty('eat')); // false (inherited from prototype)
 console.log(cooper.hasOwnProperty('bark')); // true
 ```
 
-#### Object.defineProperty(obj, property, descriptor)
+### Object.defineProperty(obj, property, descriptor)
 
 With the descriptor, we can modify the way the property behaves
 
@@ -949,7 +950,7 @@ console.log(exampleObject);
 // node: {}
 ```
 
-#### Object.assign(target, ...sources)
+### Object.assign(target, ...sources)
 
 Create a shallow copy by using an empty object as the target
 
@@ -986,7 +987,7 @@ obj1 = newObj;
 console.log(newObj); // { a: 1, b: 2, c: 3 }
 ```
 
-#### "this" keyword
+### "this" keyword
 
 In most cases, the value of "this" is determined by how a function is called.
 
@@ -1019,7 +1020,7 @@ console.log(person.getDeepThis()); // window in browser, global in node
 console.log(person.arrowDeepThis()); // person object
 ```
 
-#### .bind() .call() .apply()
+### .bind() .call() .apply()
 
 These 3 methods all involve the use of the "this" keyword
 
@@ -1074,7 +1075,7 @@ const object1 = {
 printer.apply(object1, [100, 99, 98, 97, 96, 95]); // In object1, we have 100,99,98,97,96,95
 ```
 
-#### ES6 Classes
+### ES6 Classes
 
 ES6 Classes are syntactic sugar over constructor functions
 
@@ -1088,7 +1089,7 @@ class Person {
 }
 ```
 
-#### prototypes
+### prototypes
 
 ```js
 // all objects inherit properties and methods from a prototype, you can think of prototypes as the parent
@@ -1137,7 +1138,7 @@ console.log(Object.getPrototypeOf(sam) === Person.prototype); // true
 console.log(sam.__proto__ === Person.prototype); // true
 ```
 
-#### Object.create(proto)
+### Object.create(proto)
 
 **Object.create()** creates a new object, setting the argument object as the new object's **\_\_proto\_\_**
 
@@ -1211,7 +1212,7 @@ getUserData();
 
 ## Error handling
 
-#### throw new Error(err)
+### throw new Error(err)
 
 Creating an instance of the **Error** object
 
@@ -1225,7 +1226,7 @@ throw new Error('this is an error');
 // Error: this is an error
 ```
 
-#### try...catch
+### try...catch
 
 ```js
 function includes2(input) {
@@ -1283,7 +1284,7 @@ function errorExample() {
 		return 'catch, something went wrong';
 	} finally {
 		console.log('looks like we are done');
-		return 'finally, this has to execute before the rest of try..catch'
+		return 'finally, this has to execute before the rest of try..catch';
 	}
 }
 
