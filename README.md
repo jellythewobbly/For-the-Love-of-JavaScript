@@ -1242,6 +1242,21 @@ console.log(newNums); // ['ONE', 2, 3, ['FOUR', 5, [6, 7]]];
 console.log(numsInNums); // [1, 2, 3, [4, 5, [6, 7]]]
 ```
 
+### setTimeout(callback, delay)
+
+```javascript
+const thisTakesTime = () => {
+  console.log('waiting, waiting, waiting');
+  setTimeout(() => console.log('okay done!'), 3000);
+};
+
+thisTakesTime();
+
+// waiting, waiting, waiting
+// * 3 seconds delay *
+// okay done!
+```
+
 ## Promise & Async/Await
 
 The states of a promise:
