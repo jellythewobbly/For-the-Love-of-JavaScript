@@ -1257,6 +1257,32 @@ thisTakesTime();
 // okay done!
 ```
 
+### setInterval(callback, delay)
+
+```javascript
+const countdownTimer = seconds => {
+  console.log(seconds);
+  const timer = setInterval(() => {
+    if (seconds <= 0) {
+      console.log('DONE!');
+      clearInterval(timer);
+    }
+    console.log(seconds);
+    seconds -= 1;
+  }, 1000);
+};
+
+countdownTimer(5);
+
+// 5
+// 4
+// 3
+// 2
+// 1
+// DONE!
+// 0
+```
+
 ## Promise & Async/Await
 
 The states of a promise:
