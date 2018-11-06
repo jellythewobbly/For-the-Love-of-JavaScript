@@ -1333,6 +1333,23 @@ getUserData();
 // { name: 'Mark', age: 32 }
 ```
 
+### Fetch API
+
+```javascript
+async function getPosts() {
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+  const json = await response.json();
+  return json;
+}
+
+const wrapper = async () => {
+  const posts = await getPosts();
+  console.log(posts);
+};
+
+// some posts in JSON here...
+```
+
 ## Error handling
 
 ### throw new Error(err)
