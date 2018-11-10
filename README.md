@@ -402,6 +402,29 @@ console.log(c); // ReferenceError: c is not defined
 
 ## ARRAY
 
+### Array destructuring
+
+```javascript
+const arr = [1, 2, 3, 4, 5];
+const [first, second, third, ...rest] = arr;
+
+console.log(first); // 1
+console.log(second); // 2
+console.log(rest); // [4, 5]
+```
+
+Swapping variables
+
+```javascript
+let a = 2;
+let b = 5;
+
+[a, b] = [b, a];
+
+console.log(a); // 5
+console.log(b); // 2
+```
+
 ### Array.isArray(input)
 
 ```javascript
@@ -751,6 +774,30 @@ console.log(total); // 15
 ```
 
 ## OBJECT
+
+### Object destructuring
+
+```javascript
+const person = {
+  name: 'David',
+  age: 30,
+  occupation: 'developer',
+};
+
+const { name, age, occupation: job } = person;
+
+console.log(name); // David
+console.log(age); // 30
+console.log(job); // developer
+```
+
+```javascript
+const { a, b, ...others } = { a: 10, b: 20, c: 30, d: 40, e: 50 };
+
+console.log(a); // 10
+console.log(b); // 20
+console.log(others); // { c: 30, d: 40, e: 50 }
+```
 
 ### Object literal
 
