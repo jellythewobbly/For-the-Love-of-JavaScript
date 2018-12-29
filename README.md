@@ -61,6 +61,22 @@ console.log('HELLO'.charCodeAt()); // 72 (if index is not a number, it defaults 
 console.log('HELLO'.charCodeAt(1)); // 69 (Char code of index 1 - 'E')
 ```
 
+### .localeCompare(givenString)
+
+Compares a string against a given string
+Returns:
+  -1 for comes before
+  0 for the same
+  1 for comes after
+
+```javascript
+console.log('10'.localeCompare('100')); // -1
+console.log('20'.localeCompare('20')); // 0
+console.log('2'.localeCompare('1000')); // 1
+
+console.log('goodbye'.localeCompare('hello')); // -1 ('g' comes before 'h');
+```
+
 ### .repeat(count)
 
 ```javascript
@@ -524,6 +540,7 @@ console.log(anyLongerThanFive); // true
 
 ```javascript
 // .sort() modifies the original array
+// if no compare function is provided, it uses localeCompare by default
 const months = ['March', 'January', 'February', 'December'];
 months.sort();
 console.log(months); // ['December', 'February', 'January', 'March'];
