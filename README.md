@@ -2,15 +2,21 @@
 
 ## MADE WITH ♥ BY JAY
 
+## Content:
+
 ### 7 Data Types
 
-1. [Boolean](#Boolean)
-2. [Null](<#NULL,\ \UNDEFINED>)
-3. [Undefined](<#NULL,\ \UNDEFINED>)
+1. [Boolean](#BOOLEAN)
+2. [Null](#NULL,-UNDEFINED)
+3. [Undefined](#NULL,-UNDEFINED)
 4. [Number](#NUMBER)
 5. [String](#STRING)
-6. [Symbol(New ES6)](#SYMBOL)
+6. Symbol(New ES6)
 7. [Object](#OBJECT) (includes [Array](#ARRAY))
+
+[Functions](#Functions)
+
+[Simple Tasks](#Simple-Tasks)
 
 ## STRING
 
@@ -65,9 +71,9 @@ console.log('HELLO'.charCodeAt(1)); // 69 (Char code of index 1 - 'E')
 
 Compares a string against a given string
 Returns:
-  -1 for comes before
-  0 for the same
-  1 for comes after
+-1 for comes before
+0 for the same
+1 for comes after
 
 ```javascript
 console.log('10'.localeCompare('100')); // -1
@@ -1224,6 +1230,62 @@ james.greeting(); // My name is James. Am I human? Yes
 james.__proto__ === person; // true
 ```
 
+## Functions
+
+### Function Declaration vs Function Expression
+
+Declaration: They are hoisted to the top of the file, you **CAN** use them before they are declared.
+
+Expression: They are not hoisted, you **CANNOT** use them before they are expressed.
+
+```javascript
+// Declaration
+function helloDeclaration() {
+  console.log('hello declaration');
+}
+
+// Expression
+const helloExpression = function() {
+  console.log('hello expression');
+};
+```
+
+```javascript
+// OKAY
+logPlus2(10); // 10 + 2 = 12
+function logPlus2(num) {
+  console.log(`${num} + 2 = ${num + 2}`);
+}
+
+// NOT OKAY
+logMinus2(5); // logMinus2 is not defined
+const logMinus2 = function(num) {
+  console.log(`${num} - 2 = ${num - 2}`);
+};
+```
+
+### Arrow Functions
+
+```javascript
+// use "()" for no arguments
+const arrowFunction = () => console.log('WOOHOO ARROW FUNCTION');
+
+// no need for "()" for a single argument
+// no need for "{}" and return keyword for single line functions
+const add2 = number => number + 2;
+
+// use () for functions with more than 1 argument
+// use {} and return for multiline functions
+const rectangle = (length, breadth) => {
+  const area = length * breadth;
+  const perimeter = 2 * length + 2 * breadth;
+  return {
+    area,
+    perimeter,
+  };
+};
+```
+
 ## JSON - JavaScript Object Notation
 
 ### JSON.parse(string)
@@ -1498,7 +1560,7 @@ console.log(errorExample());
 // finally, this has to execute before the rest of try..catch
 ```
 
-## Algorithms?
+## Simple Tasks
 
 ### TASK: REVERSE A STRING
 
