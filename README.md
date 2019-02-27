@@ -582,6 +582,12 @@ arr.reverse();
 console.log(arr); // ['five', 'four', 'three', 'two', 'one']
 ```
 
+### .fill(value, optionalStart, optionalEnd)
+
+```javascript
+const zeros = new Array(10).fill(0); // => [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+```
+
 ### .push(values)
 
 Adds one or more elements to the END of the array, it returns the new length of the array
@@ -1284,6 +1290,75 @@ const rectangle = (length, breadth) => {
     perimeter,
   };
 };
+```
+
+### Higher Order Function
+
+Higher order functions are functions that either return a function or take function(s) as arguments.
+
+Note: Array methods such as forEach, map, reduce, filter are all higher order functions.
+
+Example: "Calculating with Functions" from Codewars
+
+```javascript
+const numberMaker = (n, func) => (func === undefined ? n : func(n));
+
+const zero = func => numberMaker(0, func);
+const one = func => numberMaker(1, func);
+const two = func => numberMaker(2, func);
+const three = func => numberMaker(3, func);
+const four = func => numberMaker(4, func);
+const five = func => numberMaker(5, func);
+const six = func => numberMaker(6, func);
+const seven = func => numberMaker(7, func);
+const eight = func => numberMaker(8, func);
+const nine = func => numberMaker(9, func);
+
+const plus = ins => outs => outs + ins;
+const minus = ins => outs => outs - ins;
+const times = ins => outs => outs * ins;
+const dividedBy = ins => outs => outs / ins;
+
+two(times(three())); // => 6
+nine(dividedBy(three())); // => 3
+one(plus(four())); // => 5
+```
+
+### Generator Function (function\*)
+
+A generator function can be paused and resumed later. It uses the "yield" and "next" keywords.
+
+```javascript
+// yield will "return" the value and pause the generator
+function* plusOne(startValue) {
+  while (true) {
+    yield (startValue += 1);
+  }
+}
+
+// calling next will resume the generator where it left off
+// resumes in the while (true) loop and next() can be called as many times
+const moreThan10 = plusOne(10);
+moreThan10.next(); // => { value: 11, done: false }
+moreThan10.next(); // => { value: 12, done: false }
+moreThan10.next().value; // => 13
+moreThan10.next().value; // => 14
+```
+
+```javascript
+const favNumbers = function*() {
+  yield 7;
+  yield 13;
+  yield 17;
+  yield 19;
+};
+
+const showNumbers = favNumbers();
+showNumbers.next(); // => { value: 7, done: false }
+showNumbers.next(); // => { value: 13, done: false }
+showNumbers.next(); // => { value: 17, done: false }
+showNumbers.next(); // => { value: 19, done: false }
+showNumbers.next(); // => { value: undefined, done: true }
 ```
 
 ## JSON - JavaScript Object Notation
