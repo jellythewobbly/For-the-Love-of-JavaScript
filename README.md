@@ -23,8 +23,8 @@
 ### Template literals ``
 
 ```javascript
-const name = 'David';
-const school = 'General Assembly';
+const name = "David";
+const school = "General Assembly";
 console.log(`Hello my name is ${name} and I am a student at ${school}.`); // "Hello my name is David and I am a student at General Assembly."
 ```
 
@@ -45,7 +45,7 @@ console.log(num.toString(2)); // '100'
 ### .length
 
 ```javascript
-const alphabets = 'abcdefghijklmnopqrstuvwxyz';
+const alphabets = "abcdefghijklmnopqrstuvwxyz";
 console.log(alphabets.length); // 26
 // indexing a string
 console.log(alphabets[0]); // a
@@ -62,9 +62,9 @@ console.log(String.fromCharCode(65, 66, 67)); // ABC
 ### .charCodeAt(index)
 
 ```javascript
-console.log('a'.charCodeAt()); // 97
-console.log('HELLO'.charCodeAt()); // 72 (if index is not a number, it defaults to 0)
-console.log('HELLO'.charCodeAt(1)); // 69 (Char code of index 1 - 'E')
+console.log("a".charCodeAt()); // 97
+console.log("HELLO".charCodeAt()); // 72 (if index is not a number, it defaults to 0)
+console.log("HELLO".charCodeAt(1)); // 69 (Char code of index 1 - 'E')
 ```
 
 ### .localeCompare(givenString)
@@ -76,17 +76,17 @@ Returns:
 1 for comes after
 
 ```javascript
-console.log('10'.localeCompare('100')); // -1
-console.log('20'.localeCompare('20')); // 0
-console.log('2'.localeCompare('1000')); // 1
+console.log("10".localeCompare("100")); // -1
+console.log("20".localeCompare("20")); // 0
+console.log("2".localeCompare("1000")); // 1
 
-console.log('goodbye'.localeCompare('hello')); // -1 ('g' comes before 'h');
+console.log("goodbye".localeCompare("hello")); // -1 ('g' comes before 'h');
 ```
 
 ### .repeat(count)
 
 ```javascript
-const str = 'foobar';
+const str = "foobar";
 console.log(str.repeat(3)); // foobarfoobarfoobar
 ```
 
@@ -94,53 +94,53 @@ console.log(str.repeat(3)); // foobarfoobarfoobar
 
 ```javascript
 // NOTE: this is commonly used with a regular expression (regex)
-const str = 'hello world';
-console.log(str.replace('hello', 'goodbye')); // goodbye world
-const ga = 'general assembly';
-console.log(ga.replace(/e/g, '3')); // g3n3ral ass3mbly (use of regex to select all 'e')
-const sentence = 'are vowels important?';
-console.log(sentence.replace(/[aeiou]/g, '')); // r vwls mprtnt?
+const str = "hello world";
+console.log(str.replace("hello", "goodbye")); // goodbye world
+const ga = "general assembly";
+console.log(ga.replace(/e/g, "3")); // g3n3ral ass3mbly (use of regex to select all 'e')
+const sentence = "are vowels important?";
+console.log(sentence.replace(/[aeiou]/g, "")); // r vwls mprtnt?
 ```
 
 ### .indexOf(searchValue, fromIndex)
 
 ```javascript
-const sentence = 'hello my friend';
-console.log(sentence.indexOf('my')); // 6
-console.log(sentence.indexOf('h')); // 0
-console.log(sentence.indexOf('hello')); // 0
+const sentence = "hello my friend";
+console.log(sentence.indexOf("my")); // 6
+console.log(sentence.indexOf("h")); // 0
+console.log(sentence.indexOf("hello")); // 0
 
-const first = sentence.indexOf('e');
+const first = sentence.indexOf("e");
 console.log(first); // 1
-console.log(sentence.indexOf('e', first + 1)); // 12 (use this to find the next index of)
-console.log(sentence.indexOf('waddup')); // -1
+console.log(sentence.indexOf("e", first + 1)); // 12 (use this to find the next index of)
+console.log(sentence.indexOf("waddup")); // -1
 ```
 
 ### .lastIndexOf(searchValue, fromIndex)
 
 ```javascript
-const sentence = 'hello David, my friend';
-console.log(sentence.lastIndexOf('D')); // 6
-console.log(sentence.indexOf('d')); // 10
-console.log(sentence.lastIndexOf('d')); // 21
-console.log(sentence.lastIndexOf('e')); // 19
-console.log(sentence.lastIndexOf('l')); // 3
-console.log(sentence.lastIndexOf('l', 2)); // 2 (only searching from index 0 to index 2 of the string - 'hel')
-console.log(sentence.lastIndexOf('l', 1)); // -1 (only searching from index 0 to index 1 of the string - 'he')
+const sentence = "hello David, my friend";
+console.log(sentence.lastIndexOf("D")); // 6
+console.log(sentence.indexOf("d")); // 10
+console.log(sentence.lastIndexOf("d")); // 21
+console.log(sentence.lastIndexOf("e")); // 19
+console.log(sentence.lastIndexOf("l")); // 3
+console.log(sentence.lastIndexOf("l", 2)); // 2 (only searching from index 0 to index 2 of the string - 'hel')
+console.log(sentence.lastIndexOf("l", 1)); // -1 (only searching from index 0 to index 1 of the string - 'he')
 ```
 
 ### .trim()
 
 ```javascript
 // Removes whitespace from both ends of the string
-const greeting = '   Hello world!   ';
+const greeting = "   Hello world!   ";
 console.log(greeting.trim()); // Hello world!
 ```
 
 ### .slice(start, end) similar but not the same as .substring()
 
 ```javascript
-const alphabets = 'abcdefghijklmnopqrstuvwxyz';
+const alphabets = "abcdefghijklmnopqrstuvwxyz";
 console.log(alphabets.slice()); // abcdefghijklmnopqrstuvwxyz
 console.log(alphabets.slice(3)); // defghijklmnopqrstuvwxyz
 console.log(alphabets.slice(3, 7)); // defg (index 3 up to but not including 7)
@@ -151,20 +151,20 @@ console.log(alphabets.slice(-10, -4)); // qrstuv
 ### .split(separator, limit)
 
 ```javascript
-const str = 'hello world';
+const str = "hello world";
 console.log(str.split()); // ['hello world']
-console.log(str.split('')); // ['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']
-console.log(str.split(' ')); // ['hello', 'world']
-console.log(str.split('e')); // ['h', 'llo world']
-console.log(str.split('l')); // ['he', '', 'o wor', 'd']
-console.log(str.split('', 4)); // ['h', 'e', 'l', 'l'] (returns the first 4 splits)
+console.log(str.split("")); // ['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']
+console.log(str.split(" ")); // ['hello', 'world']
+console.log(str.split("e")); // ['h', 'llo world']
+console.log(str.split("l")); // ['he', '', 'o wor', 'd']
+console.log(str.split("", 4)); // ['h', 'e', 'l', 'l'] (returns the first 4 splits)
 ```
 
 ### .toLowerCase() .toUpperCase()
 
 ```javascript
-console.log('WADDUP BRO'.toLowerCase()); // waddup bro
-console.log('hello world'.toUpperCase()); // HELLO WORLD
+console.log("WADDUP BRO".toLowerCase()); // waddup bro
+console.log("hello world".toUpperCase()); // HELLO WORLD
 ```
 
 ### .match(regularExpression)
@@ -173,11 +173,11 @@ Returns an array of strings that match the regular expression
 
 ```javascript
 const randomString =
-  'the123quick456brown789fox!@#jumped$%^over&*(the)_+lazy{}|dog';
+  "the123quick456brown789fox!@#jumped$%^over&*(the)_+lazy{}|dog";
 const onlyWords = randomString.match(/[a-z]+/g);
 console.log(onlyWords);
 // ['the', 'quick', 'brown', 'fox', 'jumped', 'over', 'the', 'lazy','dog']
-console.log(onlyWords.join(' ')); // 'the quick brown fox jumped over the lazy dog'
+console.log(onlyWords.join(" ")); // 'the quick brown fox jumped over the lazy dog'
 ```
 
 ## NUMBER
@@ -278,10 +278,10 @@ Javascript will attempt to coerce an unexpected value type to the expected type
 Does not work with addition as it leads to concatenation
 
 ```javascript
-console.log('6' + '9'); // '69' (string)
-console.log('10' - '7'); // 3 (number)
-console.log('3' * '3'); // 9 (number)
-console.log('10' / '2'); // 5 (number)
+console.log("6" + "9"); // '69' (string)
+console.log("10" - "7"); // 3 (number)
+console.log("3" * "3"); // 9 (number)
+console.log("10" / "2"); // 5 (number)
 ```
 
 ### NaN
@@ -292,9 +292,9 @@ Comparing/equating anything with NaN will result in false
 
 ```javascript
 console.log(NaN == NaN); // false
-console.log('hello' == NaN); // false
-console.log(['this', 'is', 'an', 'array'] == NaN); // false
-console.log({ name: 'ben', age: 20 } == NaN); // false
+console.log("hello" == NaN); // false
+console.log(["this", "is", "an", "array"] == NaN); // false
+console.log({ name: "ben", age: 20 } == NaN); // false
 
 console.log(NaN != NaN); // true
 ```
@@ -304,9 +304,9 @@ console.log(NaN != NaN); // true
 To test for NaN, use isNaN()
 
 ```javascript
-console.log(isNaN('hello')); // true
-console.log(isNaN(['this', 'is', 'an', 'array'])); // true
-console.log(isNaN({ name: 'ben', age: 20 })); // true
+console.log(isNaN("hello")); // true
+console.log(isNaN(["this", "is", "an", "array"])); // true
+console.log(isNaN({ name: "ben", age: 20 })); // true
 ```
 
 ## BOOLEAN
@@ -359,13 +359,13 @@ if left is falsy, right will be returned
 
 ```javascript
 const people = [
-  { name: 'jerry', occupation: 'teacher' },
-  { name: 'sandra', occupation: 'dentist' },
-  { name: 'sloth' },
+  { name: "jerry", occupation: "teacher" },
+  { name: "sandra", occupation: "dentist" },
+  { name: "sloth" }
 ];
 
 for (let i of people) {
-  console.log(`${i.name}: ${i.occupation || 'jobless'}`);
+  console.log(`${i.name}: ${i.occupation || "jobless"}`);
 }
 // jerry: teacher
 // sandra: dentist
@@ -382,8 +382,8 @@ if left is falsy, left will be returned
 let online = true;
 
 const getData = () => {
-  console.log('SENDING REQUEST...');
-  console.log('STATUS 200 RECEIVED');
+  console.log("SENDING REQUEST...");
+  console.log("STATUS 200 RECEIVED");
 };
 
 if (online) {
@@ -452,23 +452,23 @@ console.log(b); // 2
 ```javascript
 Array.isArray([1, 2, 3]); // true
 Array.isArray({ foo: 123 }); // false
-Array.isArray('foobar'); // false
+Array.isArray("foobar"); // false
 Array.isArray(undefined); // false
 ```
 
 ### .length
 
 ```javascript
-const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
+const arr = ["alex", "ben", "charlie", "david", "ethan"];
 console.log(arr.length); // 5
 ```
 
 ### .indexOf(searchValue, fromIndex)
 
 ```javascript
-const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
-console.log(arr.indexOf('charlie')); // 2
-console.log(arr.indexOf('hello world')); // -1 (not found)
+const arr = ["alex", "ben", "charlie", "david", "ethan"];
+console.log(arr.indexOf("charlie")); // 2
+console.log(arr.indexOf("hello world")); // -1 (not found)
 ```
 
 ### .findIndex(callback)
@@ -487,20 +487,20 @@ console.log(arr.findIndex(element => element > 20)); // 3
 Returns the value of the first element that satisfies the condition. Otherwise undefined is returned.
 
 ```javascript
-const arr = ['blue', 'red', 'green', 'purple', 'pink', 'yellow'];
+const arr = ["blue", "red", "green", "purple", "pink", "yellow"];
 console.log(arr.find(color => color.length > 5)); // purple
 ```
 
 ### .includes(searchValue)
 
 ```javascript
-const arr = ['blue', 'red', 'green', 'purple', 'pink', 'yellow'];
-console.log(arr.includes('red')); // true
-console.log(arr.includes('rainbow')); // false
+const arr = ["blue", "red", "green", "purple", "pink", "yellow"];
+console.log(arr.includes("red")); // true
+console.log(arr.includes("rainbow")); // false
 
 // alternative using .indexOf()
-console.log(arr.indexOf('red') !== -1); // true
-console.log(arr.indexOf('rainbow') !== -1); // false
+console.log(arr.indexOf("red") !== -1); // true
+console.log(arr.indexOf("rainbow") !== -1); // false
 ```
 
 ### .every(callback)
@@ -513,10 +513,10 @@ const allGreaterThanZero = numbers.every(i => i > 0);
 console.log(allGreaterThanZero); // true
 
 // breaks out of the function once a false value has been found
-const arr = [1, 2, 3, 'hello', 4, 5];
+const arr = [1, 2, 3, "hello", 4, 5];
 const allNumbers = arr.every(i => {
   console.log(i);
-  return typeof i === 'number';
+  return typeof i === "number";
 });
 // 1
 // 2
@@ -531,7 +531,7 @@ Returns true if at least one element in the array passes the condition
 
 ```javascript
 // breaks out of the function once a true value has been found
-const names = ['alex', 'ben', 'charlie', 'david', 'ethan'];
+const names = ["alex", "ben", "charlie", "david", "ethan"];
 const anyLongerThanFive = names.some(i => {
   console.log(i);
   return i.length > 5;
@@ -547,12 +547,12 @@ console.log(anyLongerThanFive); // true
 ```javascript
 // .sort() modifies the original array
 // if no compare function is provided, it uses localeCompare by default
-const months = ['March', 'January', 'February', 'December'];
+const months = ["March", "January", "February", "December"];
 months.sort();
 console.log(months); // ['December', 'February', 'January', 'March'];
 
 // sort by ascending length of string
-const months = ['January', 'February', 'March', 'April', 'May', 'December'];
+const months = ["January", "February", "March", "April", "May", "December"];
 months.sort((a, b) => a.length - b.length);
 console.log(months); // ['May', 'March', 'April', 'January', 'February', 'December']
 ```
@@ -577,7 +577,7 @@ console.log(numbers); // [101, 30, 21, 4, 1]
 
 ```javascript
 // .reverse() modifies the original array
-const arr = ['one', 'two', 'three', 'four', 'five'];
+const arr = ["one", "two", "three", "four", "five"];
 arr.reverse();
 console.log(arr); // ['five', 'four', 'three', 'two', 'one']
 ```
@@ -593,8 +593,8 @@ const zeros = new Array(10).fill(0); // => [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 Adds one or more elements to the END of the array, it returns the new length of the array
 
 ```javascript
-const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
-const arrLength = arr.push('felix', 'gerald');
+const arr = ["alex", "ben", "charlie", "david", "ethan"];
+const arrLength = arr.push("felix", "gerald");
 console.log(arr); // ['alex', 'ben', 'charlie', 'david', 'ethan', 'felix', 'gerald']
 console.log(arrLength); // 7
 ```
@@ -604,8 +604,8 @@ console.log(arrLength); // 7
 Adds one or more elements to the START of an array, it returns the new length of the array
 
 ```javascript
-const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
-const arrLength = arr.unshift('adam', 'alan');
+const arr = ["alex", "ben", "charlie", "david", "ethan"];
+const arrLength = arr.unshift("adam", "alan");
 console.log(arr); // ['adam', 'alan', 'alex', 'ben', 'charlie', 'david', 'ethan']
 console.log(arrLength); // 7
 ```
@@ -615,7 +615,7 @@ console.log(arrLength); // 7
 Removes the LAST element from an array, it returns the element that was removed
 
 ```javascript
-const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
+const arr = ["alex", "ben", "charlie", "david", "ethan"];
 const popValue = arr.pop();
 console.log(arr); // ['alex', 'ben', 'charlie', 'david']
 console.log(popValue); // 'ethan'
@@ -626,7 +626,7 @@ console.log(popValue); // 'ethan'
 Removes the FIRST element from an array and returns the element that was removed
 
 ```javascript
-const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
+const arr = ["alex", "ben", "charlie", "david", "ethan"];
 const shiftValue = arr.shift();
 console.log(arr); // ['ben', 'charlie', 'david', 'ethan']
 console.log(shiftValue); // 'alex'
@@ -636,7 +636,7 @@ console.log(shiftValue); // 'alex'
 
 ```javascript
 // .slice() does not modify the original array
-const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
+const arr = ["alex", "ben", "charlie", "david", "ethan"];
 console.log(arr.slice()); // shallow copy of arr
 console.log(arr.slice(2)); // ['charlie', 'david', 'ethan']
 console.log(arr.slice(2, 3)); // ['charlie']
@@ -652,24 +652,24 @@ Returns an array containing the deleted element(s) or an empty array
 // .splice() modifies the original array
 
 // insert values into an array
-const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
-arr.splice(2, 0, 'brandon', 'bob');
+const arr = ["alex", "ben", "charlie", "david", "ethan"];
+arr.splice(2, 0, "brandon", "bob");
 console.log(arr); // ['alex', 'ben', 'brandon', 'bob', 'charlie', 'david', 'ethan']
 
 // delete values in an array
-const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
+const arr = ["alex", "ben", "charlie", "david", "ethan"];
 arr.splice(2, 1);
 console.log(arr); // ['alex', 'ben', 'david', 'ethan']
 
 // get the elements that are removed
-const arr = ['alex', 'ben', 'brandon', 'bob', 'charlie', 'david', 'ethan'];
+const arr = ["alex", "ben", "brandon", "bob", "charlie", "david", "ethan"];
 const removedValues = arr.splice(2, 2);
 console.log(removedValues); // ['brandon', 'bob']
 console.log(arr); // ['alex', 'ben', 'charlie', 'david', 'ethan']
 
 // replace values in an array
-const arr = ['alex', 'ben', 'charlie', 'david', 'ethan'];
-arr.splice(3, 1, 'daniel');
+const arr = ["alex", "ben", "charlie", "david", "ethan"];
+arr.splice(3, 1, "daniel");
 console.log(arr); // ['alex', 'ben', 'charlie', 'daniel', 'ethan']
 ```
 
@@ -690,7 +690,7 @@ arr.forEach(i => console.log(`the number is ${i}`));
 .forEach() with index
 
 ```javascript
-const arr = ['a', 'b', 'c', 'd', 'e'];
+const arr = ["a", "b", "c", "d", "e"];
 arr.forEach((value, index) => console.log(`index ${index}: ${value}`));
 // index 0: a
 // index 1: b
@@ -729,7 +729,7 @@ console.log(moreThanFive); // [6, 7, 8, 9, 10]
 ```
 
 ```javascript
-const stuff = ['foo', 'bar', 'MacBook', 'this is a long string'];
+const stuff = ["foo", "bar", "MacBook", "this is a long string"];
 const longWords = stuff.filter(i => i.length > 5);
 console.log(longWords); // ['MacBook', 'this is a long string']
 ```
@@ -808,9 +808,9 @@ console.log(total); // 15
 
 ```javascript
 const person = {
-  name: 'David',
+  name: "David",
   age: 30,
-  occupation: 'developer',
+  occupation: "developer"
 };
 
 const { name, age, occupation: job } = person;
@@ -834,19 +834,19 @@ Easiest way to create an object by using the object literal syntax
 
 ```javascript
 const obj = {
-  key1: 'value1',
-  key2: 'value2',
-  key3: 'value3',
+  key1: "value1",
+  key2: "value2",
+  key3: "value3"
 };
 
 // getting properties
 console.log(obj.key1); // value1
-console.log(obj['key2']); // value2
+console.log(obj["key2"]); // value2
 
 // adding new properties
 // use the square bracket notation for special characters or for an unknown key
-obj.key4 = 'value4'; // dot notation
-obj['special-key'] = 'special value'; // square bracket notation
+obj.key4 = "value4"; // dot notation
+obj["special-key"] = "special value"; // square bracket notation
 console.log(obj);
 /*
 { key1: 'value1',
@@ -858,7 +858,7 @@ console.log(obj);
 
 // removing properties
 delete obj.key4;
-delete obj['special-key'];
+delete obj["special-key"];
 console.log(obj);
 // { key1: 'value1', key2: 'value2', key3: 'value3' }
 ```
@@ -871,16 +871,16 @@ console.log(obj);
 // get keyword used to define a getter (access an object's method like a property)
 function createPerson(name, gender, yearOfBirth) {
   return {
-    location: 'Singapore',
+    location: "Singapore",
     name,
     gender,
     get age() {
       return new Date().getFullYear() - yearOfBirth;
-    },
+    }
   };
 }
 
-const peter = createPerson('peter', 'male', 1995);
+const peter = createPerson("peter", "male", 1995);
 console.log(peter.location); // Singapore
 console.log(peter.name); // peter
 console.log(peter.age); // 23 (AS OF 2018)
@@ -892,13 +892,13 @@ console.log(peter.age); // 23 (AS OF 2018)
 // new keyword has to be used with constructor function
 // note uppercase first letter (Pascal case) used for constructor function
 function Person(name, gender, yearOfBirth) {
-  this.location = 'Singapore';
+  this.location = "Singapore";
   this.name = name;
   this.gender = gender;
   this.age = new Date().getFullYear() - yearOfBirth;
 }
 
-const alex = new Person('alex', 'male', 2000);
+const alex = new Person("alex", "male", 2000);
 console.log(alex.location); // Singapore
 console.log(alex.name); // alex
 console.log(alex.age); // 18 (AS OF 2018)
@@ -911,9 +911,9 @@ Use for...in to iterate over an object
 ```javascript
 // for...in returns the object's own instance properties/methods and also those from the prototype
 const book = {
-  title: 'JavaScript: The Definitive Guide',
-  author: 'David Flanagan',
-  publisher: "O'Reilly Media",
+  title: "JavaScript: The Definitive Guide",
+  author: "David Flanagan",
+  publisher: "O'Reilly Media"
 };
 
 for (let key in book) {
@@ -931,8 +931,8 @@ Returns an array of the object's keys
 ```javascript
 // returns only the object's own instance properties/methods
 const person = {
-  name: 'mary',
-  age: 32,
+  name: "mary",
+  age: 32
 };
 console.log(Object.keys(person)); // ['name', 'age']
 ```
@@ -943,8 +943,8 @@ Returns an array of the object's values
 
 ```javascript
 const person = {
-  name: 'mary',
-  age: 32,
+  name: "mary",
+  age: 32
 };
 console.log(Object.values(person)); // ['mary', 32]
 ```
@@ -955,8 +955,8 @@ Returns an array of the object's own enumerable property [key, value] pairs
 
 ```javascript
 const person = {
-  name: 'mary',
-  age: 32,
+  name: "mary",
+  age: 32
 };
 console.log(Object.entries(person)); // [['name', 'mary'], ['age', 32]]
 ```
@@ -967,11 +967,11 @@ Returns true if the property is in the object or its prototype chain
 
 ```javascript
 const person = {
-  name: 'mary',
-  age: 32,
+  name: "mary",
+  age: 32
 };
 
-if ('name' in person) console.log(`person has a name ${person.name}`);
+if ("name" in person) console.log(`person has a name ${person.name}`);
 // person has a name mary
 ```
 
@@ -986,18 +986,18 @@ function Animal(name, species) {
 }
 
 Animal.prototype.eat = function() {
-  console.log('Eating!');
+  console.log("Eating!");
 };
 
-const cooper = new Animal('Cooper', 'dog');
+const cooper = new Animal("Cooper", "dog");
 cooper.bark = function() {
-  console.log('WOOF WOOF!');
+  console.log("WOOF WOOF!");
 };
 
 cooper.eat(); // Eating!
 cooper.bark(); // WOOF WOOF!
-console.log(cooper.hasOwnProperty('eat')); // false (inherited from prototype)
-console.log(cooper.hasOwnProperty('bark')); // true
+console.log(cooper.hasOwnProperty("eat")); // false (inherited from prototype)
+console.log(cooper.hasOwnProperty("bark")); // true
 ```
 
 ### Object.defineProperty(obj, property, descriptor)
@@ -1007,15 +1007,15 @@ With the descriptor, we can modify the way the property behaves
 By default, the properties added are immutable and not enumerable
 
 ```javascript
-const exampleObject = { hello: 'world' };
-Object.defineProperty(exampleObject, 'exampleKey', {
-  value: 'exampleValue',
+const exampleObject = { hello: "world" };
+Object.defineProperty(exampleObject, "exampleKey", {
+  value: "exampleValue"
 });
 
 console.log(exampleObject);
 // browser: {hello: 'world', exampleKey: "exampleValue"}
 // node: {hello: 'world'}
-console.log('exampleKey' in exampleObject); // true
+console.log("exampleKey" in exampleObject); // true
 console.log(Object.keys(exampleObject)); // ['hello']
 for (let key in exampleObject) console.log(key); // hello
 
@@ -1073,7 +1073,7 @@ ES6 arrow functions do not rebind the "this" keyword
 
 ```javascript
 const person = {
-  name: 'george',
+  name: "george",
   getThis() {
     return this;
   },
@@ -1088,7 +1088,7 @@ const person = {
       return this;
     };
     return arrowFunc();
-  },
+  }
 };
 
 console.log(person.getThis()); // person object
@@ -1104,7 +1104,7 @@ These 3 methods all involve the use of the "this" keyword
 
 ```javascript
 const person = {
-  name: 'george',
+  name: "george",
   getThis() {
     return this;
   },
@@ -1113,7 +1113,7 @@ const person = {
       return this;
     }
     return example.bind(this)();
-  },
+  }
 };
 
 console.log(person.getDeepThis()); // person object
@@ -1127,14 +1127,14 @@ function printer(greeting) {
 }
 
 const object1 = {
-  name: 'object1',
+  name: "object1"
 };
 
 const object2 = {
-  name: 'object2',
+  name: "object2"
 };
 
-printer.call(object2, 'Hi there'); // Hi there, this is object2
+printer.call(object2, "Hi there"); // Hi there, this is object2
 ```
 
 .apply(thisArg, [arguments array])
@@ -1145,7 +1145,7 @@ function printer(...numbers) {
 }
 
 const object1 = {
-  name: 'object1',
+  name: "object1"
 };
 
 printer.apply(object1, [100, 99, 98, 97, 96, 95]); // In object1, we have 100,99,98,97,96,95
@@ -1170,13 +1170,13 @@ class Person {
 ```javascript
 // all objects inherit properties and methods from a prototype, you can think of prototypes as the parent
 function Person(name, gender, yearOfBirth) {
-  this.location = 'Singapore';
+  this.location = "Singapore";
   this.name = name;
   this.gender = gender;
   this.age = new Date().getFullYear() - yearOfBirth;
 }
 
-const jack = new Person('jack', 'male', 1980);
+const jack = new Person("jack", "male", 1980);
 console.log(Object.getPrototypeOf(jack)); // returns the prototype of Person
 
 console.log(jack.constructor); // returns the Person function
@@ -1197,15 +1197,15 @@ Person.prototype.walk = function() {
   console.log(`${this.name} is walking...`);
 };
 
-const sam = new Person('sam', 'female', 1998);
+const sam = new Person("sam", "female", 1998);
 sam.walk(); // sam is walking...
 console.log(sam.getAge()); // 20 (AS OF 2018)
 ```
 
 ```javascript
 // comparing the prototypes of objects, continuing from the example above
-const sam = new Person('sam', 'female', 1998);
-const daniel = new Person('daniel', 'male', 1950);
+const sam = new Person("sam", "female", 1998);
+const daniel = new Person("daniel", "male", 1950);
 
 console.log(Object.getPrototypeOf(daniel) === Object.getPrototypeOf(sam)); // true
 
@@ -1224,13 +1224,13 @@ const person = {
   isHuman: true,
   greeting: function() {
     console.log(
-      `My name is ${this.name}. Am I human? ${this.isHuman ? 'Yes' : 'No'}`
+      `My name is ${this.name}. Am I human? ${this.isHuman ? "Yes" : "No"}`
     );
-  },
+  }
 };
 
 const james = Object.create(person);
-james.name = 'James';
+james.name = "James";
 james.greeting(); // My name is James. Am I human? Yes
 
 james.__proto__ === person; // true
@@ -1244,15 +1244,17 @@ Declaration: They are hoisted to the top of the file, you **CAN** use them befor
 
 Expression: They are not hoisted, you **CANNOT** use them before they are expressed.
 
+Note: The easiest way to distinguish declaration vs. expression is the position of the word "function" in the statement (not just a line, but a distinct statement). If "function" is the very first thing in the statement, then it's a function declaration. Otherwise, it's a function expression. - ["You don't know JS" by Kyle Simpson](http://github.com/getify/You-Dont-Know-JS)
+
 ```javascript
 // Declaration
 function helloDeclaration() {
-  console.log('hello declaration');
+  console.log("hello declaration");
 }
 
 // Expression
 const helloExpression = function() {
-  console.log('hello expression');
+  console.log("hello expression");
 };
 ```
 
@@ -1274,7 +1276,7 @@ const logMinus2 = function(num) {
 
 ```javascript
 // use "()" for no arguments
-const arrowFunction = () => console.log('WOOHOO ARROW FUNCTION');
+const arrowFunction = () => console.log("WOOHOO ARROW FUNCTION");
 
 // no need for "()" for a single argument
 // no need for "{}" and return keyword for single line functions
@@ -1287,7 +1289,7 @@ const rectangle = (length, breadth) => {
   const perimeter = 2 * length + 2 * breadth;
   return {
     area,
-    perimeter,
+    perimeter
   };
 };
 ```
@@ -1391,9 +1393,9 @@ console.log(milks.length); // 5 (elements in the array)
 
 ```javascript
 const myStuff = {
-  laptop: 'MacBook Pro',
-  watch: 'Casio F-91W',
-  bottle: 'Dasani',
+  laptop: "MacBook Pro",
+  watch: "Casio F-91W",
+  bottle: "Dasani"
 };
 console.log(typeof myStuff); // object
 console.log(myStuff.laptop); // MacBook Pro
@@ -1405,7 +1407,7 @@ console.log(stringStuff.laptop); // undefined
 ```
 
 ```javascript
-const pets = ['dog', 'cat', 'fish', 'hamster', 'bird', 'frog', 'horse'];
+const pets = ["dog", "cat", "fish", "hamster", "bird", "frog", "horse"];
 console.log(Array.isArray(pets)); // true
 
 const strPets = JSON.stringify(pets);
@@ -1422,8 +1424,8 @@ const numsInNums = [1, 2, 3, [4, 5, [6, 7]]];
 const newNums = [...numsInNums];
 
 console.log(numsInNums === newNums); // false
-newNums[0] = 'ONE';
-newNums[3][0] = 'FOUR';
+newNums[0] = "ONE";
+newNums[3][0] = "FOUR";
 
 console.log(newNums); // ['ONE', 2, 3, ['FOUR', 5, [6, 7]]];
 console.log(numsInNums); // [1, 2, 3, ['FOUR', 5, [6, 7]]];
@@ -1436,8 +1438,8 @@ const numsInNums = [1, 2, 3, [4, 5, [6, 7]]];
 const newNums = JSON.parse(JSON.stringify(numsInNums));
 
 console.log(numsInNums === newNums); // false
-newNums[0] = 'ONE';
-newNums[3][0] = 'FOUR';
+newNums[0] = "ONE";
+newNums[3][0] = "FOUR";
 
 console.log(newNums); // ['ONE', 2, 3, ['FOUR', 5, [6, 7]]];
 console.log(numsInNums); // [1, 2, 3, [4, 5, [6, 7]]]
@@ -1447,8 +1449,8 @@ console.log(numsInNums); // [1, 2, 3, [4, 5, [6, 7]]]
 
 ```javascript
 const thisTakesTime = () => {
-  console.log('waiting, waiting, waiting');
-  setTimeout(() => console.log('okay done!'), 3000);
+  console.log("waiting, waiting, waiting");
+  setTimeout(() => console.log("okay done!"), 3000);
 };
 
 thisTakesTime();
@@ -1465,7 +1467,7 @@ const countdownTimer = seconds => {
   console.log(seconds);
   const timer = setInterval(() => {
     if (seconds <= 0) {
-      console.log('DONE!');
+      console.log("DONE!");
       clearInterval(timer);
     }
     console.log(seconds);
@@ -1498,8 +1500,8 @@ rejected: the operation failed.
 const p = new Promise((resolve, reject) => {
   // perform async operation here
   setTimeout(() => {
-    resolve('Success!'); // pending => resolved/fulfilled
-    reject(new Error('Error!')); // pending => rejected
+    resolve("Success!"); // pending => resolved/fulfilled
+    reject(new Error("Error!")); // pending => rejected
   }, 2000);
 });
 
@@ -1515,14 +1517,14 @@ p.then(result => console.log(result)).catch(err =>
 function databaseQuery2Seconds() {
   return new Promise(resolve => {
     setTimeout(() => {
-      console.log('Received result from database');
-      resolve({ name: 'Mark', age: 32 });
+      console.log("Received result from database");
+      resolve({ name: "Mark", age: 32 });
     }, 2000);
   });
 }
 
 async function getUserData() {
-  console.log('Searching database for user');
+  console.log("Searching database for user");
   const result = await databaseQuery2Seconds();
   console.log(result);
 }
@@ -1538,7 +1540,7 @@ getUserData();
 
 ```javascript
 async function getPosts() {
-  const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+  const response = await fetch("https://jsonplaceholder.typicode.com/posts");
   const json = await response.json();
   return json;
 }
@@ -1558,7 +1560,7 @@ const wrapper = async () => {
 Creating an instance of the **Error** object
 
 ```javascript
-throw new Error('this is an error');
+throw new Error("this is an error");
 
 // In Chrome
 //Uncaught Error: this is an error
@@ -1571,7 +1573,7 @@ throw new Error('this is an error');
 
 ```javascript
 function includes2(input) {
-  return input.indexOf('2') !== -1;
+  return input.indexOf("2") !== -1;
 }
 
 const num = 12345;
@@ -1591,22 +1593,22 @@ try {
 
 ```javascript
 try {
-  console.log('hello world!');
+  console.log("hello world!");
 } catch (err) {
-  console.log('Error:', err.message);
+  console.log("Error:", err.message);
 } finally {
-  console.log('finally this runs');
+  console.log("finally this runs");
 }
 
 // hello world!
 // finally this runs
 
 try {
-  throw new Error('this is an error');
+  throw new Error("this is an error");
 } catch (err) {
-  console.log('Error:', err.message);
+  console.log("Error:", err.message);
 } finally {
-  console.log('finally this runs');
+  console.log("finally this runs");
 }
 
 // Error: this is an error
@@ -1618,14 +1620,14 @@ Finally will execute regardless of any **return** statements in the **try...catc
 ```javascript
 function errorExample() {
   try {
-    throw new Error('oh no, an error occurred');
-    return 'try, all is good';
+    throw new Error("oh no, an error occurred");
+    return "try, all is good";
   } catch (err) {
     console.log(err.message);
-    return 'catch, something went wrong';
+    return "catch, something went wrong";
   } finally {
-    console.log('looks like we are done');
-    return 'finally, this has to execute before the rest of try..catch';
+    console.log("looks like we are done");
+    return "finally, this has to execute before the rest of try..catch";
   }
 }
 
@@ -1640,12 +1642,12 @@ console.log(errorExample());
 ### TASK: REVERSE A STRING
 
 ```javascript
-const alphabets = 'abcdefg';
+const alphabets = "abcdefg";
 const reverser = input =>
   input
-    .split('')
+    .split("")
     .reverse()
-    .join('');
+    .join("");
 
 console.log(reverser(alphabets)); // gfedcba
 ```
@@ -1653,17 +1655,17 @@ console.log(reverser(alphabets)); // gfedcba
 ### TASK: CAPITALISE A STRING
 
 ```javascript
-const str = 'foobar';
+const str = "foobar";
 const caps = input => input[0].toUpperCase() + input.slice(1);
 console.log(caps(str)); // Foobar
 
 // Capitalise first letter of every word
-const sentence = 'this is a sentence';
+const sentence = "this is a sentence";
 const up = input =>
   input
-    .split(' ')
+    .split(" ")
     .map(word => word[0].toUpperCase() + word.slice(1))
-    .join(' ');
+    .join(" ");
 
 console.log(up(sentence)); // This Is A Sentence
 ```
